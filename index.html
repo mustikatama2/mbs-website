@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PT Mustika Buana Sejahtera — Industrial Timber Panel Supplier, Indonesia</title>
+  <meta name="description" content="PT MBS manufactures export-grade plywood, blockboard, and barecore from sustainable Albizia Falcata. CARB Phase II & JAS certified. Ships to 5 continents from Lumajang, East Java."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:        #0f1e1f;
+      --ink-mid:    #1e3637;
+      --teal:       #68ccd1;
+      --teal-light: #a8e6e9;
+      --teal-dark:  #3a9ea4;
+      --gold:       #e8c84a;
+      --coral:      #ef4e3e;
+      --warm-bg:    #f4f0eb;
+      --warm-mid:   #e8e2d9;
+      --white:      #ffffff;
+      --gray:       #6b7280;
+      --border:     rgba(15,30,31,0.10);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',sans-serif; color:var(--ink); background:var(--white); overflow-x:hidden; }
+
+    .container { max-width:1160px; margin:0 auto; padding:0 5%; }
+    .tag { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--teal-dark); }
+    .tag::before { content:''; width:20px; height:2px; background:var(--teal); border-radius:4px; }
+    .h-display { font-family:'DM Serif Display',serif; line-height:1.1; }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
+    .reveal.in { opacity:1; transform:translateY(0); }
+    .d1 { transition-delay:.1s; } .d2 { transition-delay:.2s; } .d3 { transition-delay:.3s; } .d4 { transition-delay:.4s; }
+
+    /* ── NAV ── */
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:900;
+      height:68px; display:flex; align-items:center; justify-content:space-between;
+      padding:0 5%;
+      background:rgba(15,30,31,0.97); backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(104,204,209,0.12);
+    }
+    .nav-brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .nav-brand-mark { width:36px; height:36px; background:var(--teal); border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:900; color:var(--ink); font-size:13px; }
+    .nav-brand-text { color:white; font-weight:700; font-size:14px; line-height:1.3; }
+    .nav-brand-text span { display:block; font-weight:400; font-size:11px; color:rgba(255,255,255,.4); letter-spacing:.5px; }
+    .nav-links { display:flex; gap:28px; list-style:none; }
+    .nav-links a { color:rgba(255,255,255,.6); font-size:13.5px; font-weight:500; text-decoration:none; transition:color .2s; }
+    .nav-links a:hover { color:white; }
+    .nav-cta { background:var(--teal); color:var(--ink); padding:9px 22px; border-radius:8px; font-size:13.5px; font-weight:700; text-decoration:none; transition:.2s; }
+    .nav-cta:hover { background:var(--teal-light); transform:translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero { min-height:100svh; background:var(--ink); display:flex; flex-direction:column; position:relative; overflow:hidden; padding-top:68px; }
+    .hero-bg {
+      position:absolute; inset:0;
+      background-image: url('https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/Logyard%20%282%29-3008x2000-1152w.JPG');
+      background-size:cover; background-position:center;
+    }
+    .hero-bg-overlay { position:absolute; inset:0; background: linear-gradient(135deg, rgba(15,30,31,0.92) 0%, rgba(15,30,31,0.80) 50%, rgba(15,30,31,0.88) 100%); }
+    .hero-grid-lines { position:absolute; inset:0; background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(104,204,209,.03) 79px,rgba(104,204,209,.03) 80px); }
+    .hero-main { flex:1; display:flex; align-items:center; padding:60px 5% 40px; }
+    .hero-inner { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; max-width:1160px; margin:0 auto; width:100%; }
+
+    .hero-eyebrow { display:inline-flex; align-items:center; gap:10px; margin-bottom:24px; background:rgba(104,204,209,.08); border:1px solid rgba(104,204,209,.2); border-radius:999px; padding:6px 14px 6px 8px; }
+    .hero-eyebrow-dot { width:24px; height:24px; background:var(--teal); border-radius:999px; display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--ink); font-weight:800; }
+    .hero-eyebrow span { font-size:11.5px; font-weight:600; color:var(--teal); letter-spacing:.5px; }
+
+    .hero h1 { font-size:clamp(2.6rem,4.5vw,4rem); color:white; line-height:1.1; margin-bottom:24px; }
+    .hero h1 em { color:var(--teal); font-style:normal; }
+    .hero-sub { font-size:1.05rem; color:rgba(255,255,255,.55); line-height:1.8; max-width:460px; margin-bottom:40px; }
+    .hero-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .btn-teal { background:var(--teal); color:var(--ink); padding:14px 28px; border-radius:10px; font-size:14.5px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:.25s; }
+    .btn-teal:hover { background:var(--teal-light); transform:translateY(-2px); box-shadow:0 8px 24px rgba(104,204,209,.3); }
+    .btn-ghost { background:transparent; color:rgba(255,255,255,.8); padding:14px 28px; border-radius:10px; font-size:14.5px; font-weight:600; text-decoration:none; border:1.5px solid rgba(255,255,255,.2); display:inline-flex; align-items:center; gap:8px; transition:.25s; }
+    .btn-ghost:hover { border-color:rgba(255,255,255,.5); color:white; }
+
+    .hero-trust { display:flex; gap:24px; margin-top:48px; flex-wrap:wrap; }
+    .hero-trust-item { display:flex; align-items:center; gap:8px; }
+    .hero-trust-item .ic { font-size:18px; }
+    .hero-trust-item span { font-size:13px; color:rgba(255,255,255,.5); font-weight:500; }
+    .hero-trust-item strong { color:rgba(255,255,255,.85); }
+
+    .hero-panel { background:rgba(255,255,255,.04); border:1px solid rgba(104,204,209,.12); border-radius:24px; padding:32px; backdrop-filter:blur(8px); }
+    .hero-panel-title { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:20px; }
+    .hero-spec-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:22px; }
+    .hero-spec { background:rgba(255,255,255,.05); border-radius:12px; padding:16px; border:1px solid rgba(255,255,255,.06); }
+    .hero-spec-val { font-size:1.6rem; font-weight:800; color:white; line-height:1; }
+    .hero-spec-val.t { color:var(--teal); } .hero-spec-val.g { color:var(--gold); }
+    .hero-spec-lbl { font-size:11.5px; color:rgba(255,255,255,.4); margin-top:5px; line-height:1.4; }
+
+    .cert-pills { display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
+    .cert-pill { display:flex; align-items:center; gap:12px; background:rgba(104,204,209,.08); border:1px solid rgba(104,204,209,.2); border-radius:12px; padding:12px 16px; }
+    .cert-pill-icon { width:36px; height:36px; background:var(--teal); border-radius:8px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:18px; }
+    .cert-pill strong { display:block; font-size:13px; font-weight:700; color:white; }
+    .cert-pill span { font-size:11px; color:rgba(255,255,255,.45); line-height:1.4; }
+    .hero-product-tags { display:flex; gap:8px; flex-wrap:wrap; }
+    .prod-pill { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); color:rgba(255,255,255,.7); padding:6px 14px; border-radius:999px; font-size:12px; font-weight:500; }
+
+    .hero-bar { border-top:1px solid rgba(104,204,209,.1); background:rgba(0,0,0,.2); }
+    .hero-bar-inner { max-width:1160px; margin:0 auto; padding:0 5%; display:flex; }
+    .hero-bar-stat { flex:1; padding:20px 24px; text-align:center; border-right:1px solid rgba(104,204,209,.07); }
+    .hero-bar-stat:last-child { border-right:none; }
+    .hero-bar-num { font-size:1.7rem; font-weight:900; color:var(--teal); letter-spacing:-1px; }
+    .hero-bar-lbl { font-size:11px; color:rgba(255,255,255,.33); text-transform:uppercase; letter-spacing:1px; margin-top:2px; }
+
+    /* ── EXPORT MARKETS ── */
+    .markets { background:var(--warm-bg); padding:44px 5%; border-bottom:1px solid var(--warm-mid); }
+    .markets-inner { max-width:1160px; margin:0 auto; }
+    .markets-label { font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin-bottom:24px; text-align:center; }
+    .markets-row { display:flex; gap:0; justify-content:center; flex-wrap:wrap; }
+    .market-item { display:flex; align-items:center; gap:10px; padding:10px 28px; border-right:1px solid var(--warm-mid); }
+    .market-item:last-child { border-right:none; }
+    .market-item .flag { font-size:22px; }
+    .market-item .name { font-size:13.5px; font-weight:600; color:#444; }
+    .market-item .detail { font-size:11px; color:var(--gray); }
+
+    /* ── WHY MBS ── */
+    .why { padding:100px 5%; background:white; }
+    .why-header { max-width:560px; margin-bottom:60px; }
+    .why h2 { font-size:clamp(2rem,3.5vw,2.8rem); margin:16px 0 18px; }
+    .why-sub { font-size:1.05rem; color:var(--gray); line-height:1.8; }
+    .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .why-card { border:1.5px solid var(--border); border-radius:20px; padding:32px; transition:.3s; position:relative; overflow:hidden; }
+    .why-card:hover { border-color:var(--teal); transform:translateY(-4px); box-shadow:0 16px 48px rgba(104,204,209,.1); }
+    .why-icon { width:52px; height:52px; border-radius:14px; margin-bottom:20px; display:flex; align-items:center; justify-content:center; font-size:24px; }
+    .why-icon.t { background:rgba(104,204,209,.12); } .why-icon.g { background:rgba(232,200,74,.12); } .why-icon.c { background:rgba(239,78,62,.1); }
+    .why-card h3 { font-size:1.05rem; font-weight:700; margin-bottom:10px; }
+    .why-card p { font-size:14px; color:var(--gray); line-height:1.75; }
+    .why-stat { margin-top:20px; padding-top:20px; border-top:1px solid var(--border); font-size:1.5rem; font-weight:800; }
+    .why-stat span { display:block; font-size:11px; font-weight:500; color:var(--gray); margin-top:2px; }
+
+    /* ── PRODUCTS ── */
+    .products { padding:100px 5%; background:var(--ink); }
+    .products-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:56px; }
+    .products-header .tag { color:var(--teal); } .products-header .tag::before { background:var(--teal); }
+    .products-header h2 { font-size:clamp(2rem,3.5vw,2.8rem); color:white; margin-top:14px; }
+    .products-header p { font-size:14px; color:rgba(255,255,255,.4); max-width:300px; text-align:right; line-height:1.7; }
+    .products-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .prod-card { border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,.06); background:rgba(255,255,255,.03); transition:.3s; }
+    .prod-card:hover { border-color:var(--teal); transform:translateY(-4px); }
+    .prod-top { height:220px; position:relative; overflow:hidden; }
+    .prod-top img { width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+    .prod-card:hover .prod-top img { transform:scale(1.05); }
+    .prod-top-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(15,30,31,.7) 0%, rgba(15,30,31,.1) 60%); }
+    .prod-body { padding:28px; }
+    .prod-name { font-size:1.15rem; font-weight:700; color:white; margin-bottom:10px; }
+    .prod-desc { font-size:13.5px; color:rgba(255,255,255,.45); line-height:1.75; margin-bottom:20px; }
+    .prod-specs { display:flex; flex-direction:column; gap:0; }
+    .spec-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(255,255,255,.06); }
+    .spec-row:last-child { border-bottom:none; }
+    .spec-k { font-size:12px; color:rgba(255,255,255,.35); }
+    .spec-v { font-size:12.5px; font-weight:600; color:rgba(255,255,255,.8); }
+    .prod-cta { display:block; width:100%; margin-top:20px; padding:12px; text-align:center; border-radius:10px; border:1px solid rgba(104,204,209,.25); color:var(--teal); font-size:13.5px; font-weight:600; text-decoration:none; transition:.2s; }
+    .prod-cta:hover { background:rgba(104,204,209,.08); border-color:var(--teal); }
+
+    /* ── CERTIFICATIONS ── */
+    .cert { padding:100px 5%; background:var(--warm-bg); }
+    .cert-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .cert h2 { font-size:clamp(2rem,3.5vw,2.8rem); margin:16px 0 18px; }
+    .cert-desc { font-size:1rem; color:var(--gray); line-height:1.8; margin-bottom:32px; }
+    .cert-cards { display:flex; flex-direction:column; gap:16px; }
+    .cert-item { display:flex; align-items:flex-start; gap:16px; background:white; border-radius:16px; padding:20px; box-shadow:0 2px 12px rgba(0,0,0,.05); border:1px solid transparent; transition:.2s; }
+    .cert-item:hover { border-color:var(--teal); transform:translateX(4px); }
+    .cert-icon { width:44px; height:44px; flex-shrink:0; border-radius:10px; background:var(--teal); display:flex; align-items:center; justify-content:center; font-size:20px; }
+    .cert-icon.gold { background:var(--gold); }
+    .cert-item h4 { font-size:14px; font-weight:700; margin-bottom:4px; }
+    .cert-item p { font-size:13px; color:var(--gray); line-height:1.6; }
+    .cert-visual { background:var(--ink); border-radius:24px; padding:40px; }
+    .cert-vis-title { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:28px; }
+    .cert-nums { display:flex; gap:24px; margin-bottom:32px; }
+    .cert-num { text-align:center; flex:1; }
+    .cert-num-val { font-size:2.5rem; font-weight:900; color:var(--teal); line-height:1; }
+    .cert-num-lbl { font-size:11.5px; color:rgba(255,255,255,.4); margin-top:6px; line-height:1.4; }
+    .cert-div { height:1px; background:rgba(255,255,255,.08); margin-bottom:28px; }
+    .cert-markets { display:flex; flex-direction:column; gap:12px; }
+    .cert-market { display:flex; align-items:center; }
+    .cert-mname { display:flex; align-items:center; gap:8px; color:rgba(255,255,255,.7); font-size:13.5px; font-weight:500; min-width:90px; }
+    .cert-bar { height:4px; flex:1; background:rgba(255,255,255,.08); border-radius:4px; margin:0 14px; overflow:hidden; }
+    .cert-fill { height:100%; background:var(--teal); border-radius:4px; }
+    .cert-pct { font-size:12px; color:rgba(255,255,255,.4); font-weight:600; min-width:52px; text-align:right; }
+
+    /* ── GROUP TIMELINE ── */
+    .timeline { padding:100px 5%; background:white; }
+    .timeline-header { text-align:center; max-width:600px; margin:0 auto 64px; }
+    .timeline-header h2 { font-size:clamp(2rem,3.5vw,2.8rem); margin:16px 0 16px; }
+    .timeline-header p { font-size:1rem; color:var(--gray); line-height:1.8; }
+    .timeline-track { position:relative; max-width:860px; margin:0 auto; }
+    .timeline-track::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:2px; background:linear-gradient(to bottom, var(--teal), rgba(104,204,209,.1)); transform:translateX(-50%); }
+    .tl-item { display:flex; gap:0; margin-bottom:40px; align-items:flex-start; }
+    .tl-item:nth-child(odd) { flex-direction:row; }
+    .tl-item:nth-child(even) { flex-direction:row-reverse; }
+    .tl-content { width:calc(50% - 32px); background:var(--warm-bg); border-radius:16px; padding:20px 24px; border:1px solid var(--warm-mid); }
+    .tl-item:nth-child(odd) .tl-content { text-align:right; }
+    .tl-item:nth-child(even) .tl-content { text-align:left; }
+    .tl-dot-wrap { width:64px; display:flex; justify-content:center; align-items:flex-start; padding-top:18px; flex-shrink:0; }
+    .tl-dot { width:20px; height:20px; background:var(--teal); border-radius:50%; border:3px solid white; box-shadow:0 0 0 3px rgba(104,204,209,.3); flex-shrink:0; }
+    .tl-dot.mbs { background:var(--coral); box-shadow:0 0 0 3px rgba(239,78,62,.25); }
+    .tl-dot.cert { background:var(--gold); box-shadow:0 0 0 3px rgba(232,200,74,.3); }
+    .tl-year { font-size:1.3rem; font-weight:900; color:var(--teal); line-height:1; margin-bottom:6px; }
+    .tl-year.mbs { color:var(--coral); } .tl-year.cert { color: #c8a000; }
+    .tl-title { font-size:14px; font-weight:700; margin-bottom:4px; }
+    .tl-desc { font-size:13px; color:var(--gray); line-height:1.6; }
+    .tl-badge { display:inline-block; margin-top:8px; padding:3px 10px; border-radius:999px; font-size:11px; font-weight:700; }
+    .tl-badge.mbs { background:rgba(239,78,62,.1); color:var(--coral); }
+    .tl-badge.cert { background:rgba(232,200,74,.15); color:#9a7a00; }
+
+    /* ── PROCESS ── */
+    .process { padding:100px 5%; background:var(--warm-bg); }
+    .process-header { text-align:center; max-width:600px; margin:0 auto 60px; }
+    .process-header h2 { font-size:clamp(2rem,3.5vw,2.8rem); margin:16px 0 16px; }
+    .process-header p { font-size:1rem; color:var(--gray); line-height:1.8; }
+    .process-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--warm-mid); border-radius:20px; overflow:hidden; }
+    .proc-step { background:white; padding:0; transition:box-shadow .3s; overflow:hidden; }
+    .proc-step:hover { box-shadow: inset 0 0 0 2px var(--teal); }
+    .proc-photo { height:160px; overflow:hidden; }
+    .proc-photo img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+    .proc-step:hover .proc-photo img { transform:scale(1.05); }
+    .proc-content { padding:24px; }
+    .proc-num { font-size:11px; font-weight:800; letter-spacing:3px; color:var(--teal-dark); text-transform:uppercase; margin-bottom:16px; }
+    .proc-icon { font-size:36px; margin-bottom:14px; }
+    .proc-step h3 { font-size:1rem; font-weight:700; margin-bottom:10px; }
+    .proc-step p { font-size:13.5px; color:var(--gray); line-height:1.75; }
+    .proc-detail { margin-top:14px; padding-top:14px; border-top:1px solid var(--border); font-size:12px; color:var(--teal-dark); font-weight:600; }
+
+    /* ── CHAIRMAN ── */
+    .chairman { padding:100px 5%; background:var(--ink); position:relative; overflow:hidden; }
+    .chairman-bg { position:absolute; inset:0; background:radial-gradient(ellipse 70% 80% at 20% 50%, rgba(104,204,209,.06) 0%, transparent 60%); }
+    .chairman-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; position:relative; }
+    .chairman-card { background:rgba(255,255,255,.04); border:1px solid rgba(104,204,209,.15); border-radius:24px; padding:48px; }
+    .quote-mark { font-size:5rem; color:var(--teal); line-height:.8; font-family:'DM Serif Display',serif; margin-bottom:16px; opacity:.5; }
+    .chairman blockquote { font-size:1.1rem; color:rgba(255,255,255,.8); line-height:1.8; font-style:italic; margin-bottom:32px; }
+    .chairman-sig { display:flex; align-items:center; gap:16px; }
+    .chairman-avatar { width:52px; height:52px; background:linear-gradient(135deg,var(--teal),var(--teal-dark)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; }
+    .chairman-name { font-size:15px; font-weight:700; color:white; }
+    .chairman-title { font-size:12px; color:rgba(255,255,255,.45); margin-top:2px; }
+    .chairman-right h2 { font-size:clamp(2rem,3vw,2.6rem); color:white; margin:16px 0 20px; }
+    .chairman-right .tag { color:var(--teal); } .chairman-right .tag::before { background:var(--teal); }
+    .chairman-right p { font-size:1rem; color:rgba(255,255,255,.55); line-height:1.8; margin-bottom:28px; }
+    .culture-items { display:flex; flex-direction:column; gap:10px; }
+    .culture-item { display:flex; align-items:center; gap:12px; font-size:13.5px; color:rgba(255,255,255,.7); }
+    .culture-item::before { content:attr(data-n); width:24px; height:24px; background:rgba(104,204,209,.15); border:1px solid rgba(104,204,204,.25); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:var(--teal); flex-shrink:0; }
+
+    /* ── CSR / PEOPLE ── */
+    .csr { padding:100px 5%; background:white; }
+    .csr-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .csr h2 { font-size:clamp(2rem,3.5vw,2.8rem); margin:16px 0 18px; }
+    .csr-desc { font-size:1rem; color:var(--gray); line-height:1.8; margin-bottom:32px; }
+    .csr-cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .csr-card { background:var(--warm-bg); border-radius:16px; padding:24px; border:1px solid var(--warm-mid); transition:.3s; }
+    .csr-card:hover { border-color:var(--teal); transform:translateY(-3px); }
+    .csr-icon { font-size:32px; margin-bottom:12px; }
+    .csr-card h4 { font-size:14px; font-weight:700; margin-bottom:6px; }
+    .csr-card p { font-size:13px; color:var(--gray); line-height:1.6; }
+    .csr-visual { background:linear-gradient(135deg,var(--ink),var(--ink-mid)); border-radius:24px; padding:40px; }
+    .csr-vis-title { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:28px; }
+    .csr-group { display:flex; flex-direction:column; gap:16px; margin-bottom:28px; }
+    .csr-group-item { display:flex; align-items:flex-start; gap:14px; }
+    .csr-group-dot { width:8px; height:8px; background:var(--teal); border-radius:50%; flex-shrink:0; margin-top:6px; }
+    .csr-group-text strong { display:block; font-size:14px; font-weight:700; color:white; margin-bottom:2px; }
+    .csr-group-text span { font-size:13px; color:rgba(255,255,255,.5); line-height:1.6; }
+    .csr-sub-title { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:16px; }
+    .csr-group-companies { display:flex; flex-direction:column; gap:8px; }
+    .csr-co { display:flex; align-items:center; justify-content:space-between; background:rgba(255,255,255,.05); border-radius:10px; padding:10px 14px; }
+    .csr-co-name { font-size:13px; font-weight:700; color:white; }
+    .csr-co-detail { font-size:11.5px; color:rgba(255,255,255,.4); }
+
+    /* ── SUSTAINABILITY ── */
+    .sustain { padding:100px 5%; background:linear-gradient(135deg,#0f2a2b 0%,#1e4345 50%,#163536 100%); position:relative; overflow:hidden; }
+    .sustain-bg { position:absolute; inset:0; background-image:radial-gradient(circle at 80% 20%,rgba(104,204,209,.08) 0%,transparent 50%); }
+    .sustain-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; position:relative; }
+    .sustain h2 { font-size:clamp(2rem,3.5vw,2.8rem); color:white; margin:16px 0 18px; }
+    .sustain-desc { font-size:1rem; color:rgba(255,255,255,.6); line-height:1.8; margin-bottom:32px; }
+    .sustain-tag { color:var(--teal-light); } .sustain-tag::before { background:var(--teal-light); }
+    .sustain-points { display:flex; flex-direction:column; gap:14px; }
+    .sustain-pt { display:flex; gap:14px; align-items:flex-start; }
+    .sustain-pt-dot { width:20px; height:20px; background:var(--teal); border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; margin-top:2px; font-size:10px; color:var(--ink); font-weight:900; }
+    .sustain-pt p { font-size:14px; color:rgba(255,255,255,.7); line-height:1.7; }
+    .sustain-pt p strong { color:white; }
+    .sustain-cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .sustain-card { background:rgba(255,255,255,.05); border:1px solid rgba(104,204,209,.12); border-radius:16px; padding:24px; text-align:center; }
+    .sustain-card-ic { font-size:36px; margin-bottom:12px; }
+    .sustain-card h4 { font-size:14px; font-weight:700; color:white; margin-bottom:6px; }
+    .sustain-card p { font-size:12.5px; color:rgba(255,255,255,.45); line-height:1.6; }
+
+    /* ── RFQ ── */
+    .rfq { padding:100px 5%; background:var(--warm-bg); }
+    .rfq-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+    .rfq h2 { font-size:clamp(2rem,3.5vw,2.8rem); margin:16px 0 16px; }
+    .rfq-desc { font-size:1rem; color:var(--gray); line-height:1.8; margin-bottom:28px; }
+    .rfq-why { display:flex; flex-direction:column; gap:12px; margin-bottom:32px; }
+    .rfq-why-item { display:flex; align-items:center; gap:12px; font-size:14px; color:var(--ink); }
+    .rfq-why-item::before { content:'✓'; width:24px; height:24px; flex-shrink:0; background:var(--teal); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:var(--ink); }
+    .rfq-contacts { display:flex; flex-direction:column; gap:10px; }
+    .rfq-contact-row { display:flex; align-items:center; gap:12px; font-size:14px; color:var(--gray); }
+    .rfq-ic { width:32px; height:32px; background:white; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:16px; box-shadow:0 1px 4px rgba(0,0,0,.08); }
+    .rfq-contact-row a { color:var(--teal-dark); font-weight:600; text-decoration:none; }
+    .rfq-form { background:white; border-radius:24px; padding:40px; box-shadow:0 8px 48px rgba(0,0,0,.08); }
+    .rfq-form h3 { font-size:1.15rem; font-weight:700; margin-bottom:24px; }
+    .frow { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .fg { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+    .fg label { font-size:12.5px; font-weight:600; color:var(--ink); }
+    .fg input, .fg select, .fg textarea { padding:11px 14px; border-radius:10px; border:1.5px solid var(--border); font-family:'Inter',sans-serif; font-size:14px; color:var(--ink); background:var(--warm-bg); outline:none; transition:.2s; width:100%; }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color:var(--teal); box-shadow:0 0 0 3px rgba(104,204,209,.15); background:white; }
+    .fg textarea { min-height:110px; resize:vertical; }
+    .rfq-submit { width:100%; padding:14px; border-radius:10px; background:var(--ink); color:white; border:none; font-size:15px; font-weight:700; cursor:pointer; transition:.25s; display:flex; align-items:center; justify-content:center; gap:8px; font-family:'Inter',sans-serif; }
+    .rfq-submit:hover { background:var(--ink-mid); transform:translateY(-1px); }
+    .rfq-arrow { transition:transform .2s; } .rfq-submit:hover .rfq-arrow { transform:translateX(4px); }
+    .rfq-note { text-align:center; margin-top:12px; font-size:12px; color:var(--gray); }
+
+    /* ── FOOTER ── */
+    footer { background:var(--ink); color:white; padding:64px 5% 28px; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; max-width:1160px; margin:0 auto 48px; }
+    .footer-logo-wrap { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+    .footer-logo-mark { width:40px; height:40px; background:var(--teal); border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:14px; color:var(--ink); }
+    .footer-logo-name { font-weight:700; font-size:15px; line-height:1.3; }
+    .footer-logo-name span { display:block; font-size:11px; font-weight:400; color:rgba(255,255,255,.3); }
+    .footer-brand p { font-size:13.5px; color:rgba(255,255,255,.4); line-height:1.8; max-width:240px; }
+    .footer-certs { display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+    .footer-cert-badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; background:rgba(104,204,209,.08); border:1px solid rgba(104,204,209,.15); border-radius:8px; font-size:11.5px; color:var(--teal); font-weight:600; }
+    .footer-col h5 { font-size:11.5px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:16px; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .footer-col ul li a { font-size:13.5px; color:rgba(255,255,255,.6); text-decoration:none; transition:color .2s; }
+    .footer-col ul li a:hover { color:var(--teal); }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.07); padding-top:24px; max-width:1160px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+    .footer-bottom p { font-size:12.5px; color:rgba(255,255,255,.25); }
+    .footer-bottom a { color:var(--teal); text-decoration:none; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:960px) {
+      .hero-inner,.cert-inner,.timeline-track::before,.chairman-inner,.csr-inner,.sustain-inner,.rfq-inner { grid-template-columns:1fr; }
+      .hero-panel,.timeline-track::before { display:none; }
+      .why-grid { grid-template-columns:1fr 1fr; }
+      .products-grid { grid-template-columns:1fr; }
+      .products-header { flex-direction:column; align-items:flex-start; gap:16px; }
+      .products-header p { text-align:left; }
+      .process-steps { grid-template-columns:1fr 1fr; }
+      .footer-top { grid-template-columns:1fr 1fr; }
+      nav .nav-links { display:none; }
+      .hero-bar-inner { flex-wrap:wrap; }
+      .hero-bar-stat { min-width:50%; }
+      .tl-item, .tl-item:nth-child(even) { flex-direction:column; }
+      .tl-content { width:100%; text-align:left !important; }
+      .tl-dot-wrap { display:none; }
+    }
+    @media(max-width:640px) {
+      .why-grid,.csr-cards,.sustain-cards { grid-template-columns:1fr; }
+      .process-steps { grid-template-columns:1fr; }
+      .frow { grid-template-columns:1fr; }
+      .footer-top { grid-template-columns:1fr; }
+      .cert-nums { gap:12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-brand" href="#">
+    <div class="nav-brand-mark">MBS</div>
+    <div class="nav-brand-text">
+      PT Mustika Buana Sejahtera
+      <span>Timber Panel Manufacturer — Est. 2006</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#why">Why MBS</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#cert">Certifications</a></li>
+    <li><a href="#history">Our Story</a></li>
+    <li><a href="#csr">People & CSR</a></li>
+    <li><a href="#rfq">Request Quote</a></li>
+  </ul>
+  <a href="#rfq" class="nav-cta">Get a Quote →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-main">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow reveal">
+          <div class="hero-eyebrow-dot">✓</div>
+          <span>CARB Phase II &amp; JAS Certified Manufacturer</span>
+        </div>
+        <h1 class="h-display reveal d1">
+          Your Reliable <em>Timber Panel</em><br/>Supplier from Indonesia
+        </h1>
+        <p class="hero-sub reveal d2">
+          PT Mustika Buana Sejahtera manufactures export-grade plywood, blockboard, and barecore from sustainable Albizia Falcata (Sengon). Part of the Mustikatama Group — trusted by buyers across Europe, Asia, and the Americas since 2006.
+        </p>
+        <div class="hero-actions reveal d3">
+          <a href="#rfq" class="btn-teal">Request a Quote →</a>
+          <a href="#products" class="btn-ghost">View Products</a>
+        </div>
+        <div class="hero-trust reveal d3">
+          <div class="hero-trust-item"><span class="ic">🏭</span><span>Lumajang, <strong>East Java</strong></span></div>
+          <div class="hero-trust-item"><span class="ic">🚢</span><span>Ships to <strong>5 continents</strong></span></div>
+          <div class="hero-trust-item"><span class="ic">👷</span><span><strong>700+</strong> workers</span></div>
+        </div>
+      </div>
+
+      <div class="hero-panel reveal d2">
+        <div class="hero-panel-title">At a Glance</div>
+        <div class="hero-spec-grid">
+          <div class="hero-spec"><div class="hero-spec-val t">700+</div><div class="hero-spec-lbl">Skilled production workers</div></div>
+          <div class="hero-spec"><div class="hero-spec-val g">2006</div><div class="hero-spec-lbl">Year MBS was established</div></div>
+          <div class="hero-spec"><div class="hero-spec-val">5</div><div class="hero-spec-lbl">Continents we export to</div></div>
+          <div class="hero-spec"><div class="hero-spec-val t">1987</div><div class="hero-spec-lbl">Mustikatama Group founded</div></div>
+        </div>
+        <div class="cert-pills">
+          <div class="cert-pill">
+            <div class="cert-pill-icon">🏆</div>
+            <div><strong>CARB Phase II Certified</strong><span>No. TPC6/CARB-ATCM/M019-HWPW014<br/>Obtained 2009</span></div>
+          </div>
+          <div class="cert-pill">
+            <div class="cert-pill-icon" style="background:var(--gold);">🌸</div>
+            <div><strong>JAS Certified</strong><span>Japan Agricultural Standards<br/>Japanese market compliance</span></div>
+          </div>
+        </div>
+        <div class="hero-product-tags">
+          <span class="prod-pill">Plywood</span>
+          <span class="prod-pill">Blockboard</span>
+          <span class="prod-pill">Barecore</span>
+          <span class="prod-pill">Albizia Falcata</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bar">
+    <div class="hero-bar-inner">
+      <div class="hero-bar-stat"><div class="hero-bar-num">700+</div><div class="hero-bar-lbl">Workers</div></div>
+      <div class="hero-bar-stat"><div class="hero-bar-num">2006</div><div class="hero-bar-lbl">Est. Year</div></div>
+      <div class="hero-bar-stat"><div class="hero-bar-num">CARB II</div><div class="hero-bar-lbl">Certified 2009</div></div>
+      <div class="hero-bar-stat"><div class="hero-bar-num">JAS</div><div class="hero-bar-lbl">Japan Standard</div></div>
+      <div class="hero-bar-stat"><div class="hero-bar-num">5</div><div class="hero-bar-lbl">Continents</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPORT MARKETS -->
+<div class="markets">
+  <div class="markets-inner">
+    <div class="markets-label">Export Markets We Serve</div>
+    <div class="markets-row">
+      <div class="market-item"><span class="flag">🇯🇵</span><div><div class="name">Japan</div><div class="detail">JAS certified</div></div></div>
+      <div class="market-item"><span class="flag">🇺🇸</span><div><div class="name">USA</div><div class="detail">CARB II compliant</div></div></div>
+      <div class="market-item"><span class="flag">🇩🇪</span><div><div class="name">Europe</div><div class="detail">DE, NL &amp; more</div></div></div>
+      <div class="market-item"><span class="flag">🇨🇳</span><div><div class="name">China &amp; Asia</div><div class="detail">Primary market</div></div></div>
+      <div class="market-item"><span class="flag">🇦🇺</span><div><div class="name">Oceania</div><div class="detail">AUS &amp; NZ</div></div></div>
+      <div class="market-item"><span class="flag">🌍</span><div><div class="name">Africa</div><div class="detail">Growing market</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY MBS -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="why-header reveal">
+      <div class="tag">Why Choose MBS</div>
+      <h2 class="h-display">Built for Buyers Who Demand Reliability</h2>
+      <p class="why-sub">We know what procurement teams need: certified quality, high-volume capacity, and a supplier that delivers on time, every time.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon t">🏆</div>
+        <h3>Dual International Certifications</h3>
+        <p>CARB Phase II (USA) and JAS (Japan) — two of the world's most demanding standards. Ship to any market with confidence, backed by documented compliance.</p>
+        <div class="why-stat">CARB + JAS <span>Dual-certified since 2009</span></div>
+      </div>
+      <div class="why-card reveal d1">
+        <div class="why-icon g">⚡</div>
+        <h3>Large Production Capacity</h3>
+        <p>700+ skilled workers operating our full East Java facility. We handle high-volume orders for manufacturers, wholesalers, large retailers, and construction contractors.</p>
+        <div class="why-stat">700+ <span>Skilled production workers on site</span></div>
+      </div>
+      <div class="why-card reveal d2">
+        <div class="why-icon c">🌿</div>
+        <h3>Sustainable Albizia Falcata</h3>
+        <p>100% plantation-grown Sengon wood — no deforestation. Fast-growing species ready for harvest in 5–7 years. Supports your ESG and green procurement goals.</p>
+        <div class="why-stat">Eco ✓ <span>Plantation wood, not rainforest</span></div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon t">🏭</div>
+        <h3>Group Strength Since 1987</h3>
+        <p>MBS is part of the Mustikatama Group — a diversified industrial group established in 1987 with operations across timber, food processing, and manufacturing.</p>
+        <div class="why-stat">35+ yrs <span>Group operational experience</span></div>
+      </div>
+      <div class="why-card reveal d1">
+        <div class="why-icon g">🎓</div>
+        <h3>Japan-Trained Professionals</h3>
+        <p>Key personnel have undergone OJT (On-the-Job Training) in Japan — bringing international manufacturing competency standards directly to our East Java plant.</p>
+        <div class="why-stat">OJT Japan <span>Internationally trained team</span></div>
+      </div>
+      <div class="why-card reveal d2">
+        <div class="why-icon c">🤝</div>
+        <h3>Custom Orders Welcome</h3>
+        <p>Whether you're a manufacturer, wholesaler, large retail chain, or construction contractor — we produce custom dimensions, grades, and specifications to match your exact needs.</p>
+        <div class="why-stat">Custom <span>Dimensions, grades &amp; specs</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="products-header reveal">
+      <div>
+        <div class="tag">Product Range</div>
+        <h2 class="h-display">Three Products,<br/>Endless Applications</h2>
+      </div>
+      <p>All made from sustainable Albizia Falcata. Custom dimensions available. Contact us for full spec sheets.</p>
+    </div>
+    <div class="products-grid">
+      <div class="prod-card reveal">
+        <div class="prod-top">
+          <img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/DSC_9277-3008x2000-1152w.JPG" alt="MBS Plywood" loading="lazy"/>
+          <div class="prod-top-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">Plywood</div>
+          <div class="prod-desc">Multi-layer cross-laminated veneer panels for superior strength. Available in multiple grades for furniture, construction, fixtures, and appliances.</div>
+          <div class="prod-specs">
+            <div class="spec-row"><span class="spec-k">Species</span><span class="spec-v">Albizia Falcata (Sengon)</span></div>
+            <div class="spec-row"><span class="spec-k">Thickness</span><span class="spec-v">3mm – 25mm</span></div>
+            <div class="spec-row"><span class="spec-k">Standard Size</span><span class="spec-v">1220 × 2440mm</span></div>
+            <div class="spec-row"><span class="spec-k">Grades</span><span class="spec-v">BB/CC, B/BB &amp; custom</span></div>
+            <div class="spec-row"><span class="spec-k">Certifications</span><span class="spec-v">CARB Phase II, JAS</span></div>
+          </div>
+          <a href="#rfq" class="prod-cta">Request Specs &amp; Pricing →</a>
+        </div>
+      </div>
+      <div class="prod-card reveal d1">
+        <div class="prod-top">
+          <img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/BC%20L%20%284%29-3008x2000-1920w.JPG" alt="MBS Blockboard" loading="lazy"/>
+          <div class="prod-top-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">Blockboard</div>
+          <div class="prod-desc">Solid Sengon core strips sandwiched between veneers. Rigid, lightweight, excellent flatness and screw-holding. Ideal for furniture, doors, and interiors.</div>
+          <div class="prod-specs">
+            <div class="spec-row"><span class="spec-k">Core</span><span class="spec-v">Sengon strips</span></div>
+            <div class="spec-row"><span class="spec-k">Face</span><span class="spec-v">Sengon veneer (or custom)</span></div>
+            <div class="spec-row"><span class="spec-k">Thickness</span><span class="spec-v">12mm – 30mm</span></div>
+            <div class="spec-row"><span class="spec-k">Standard Size</span><span class="spec-v">1220 × 2440mm</span></div>
+            <div class="spec-row"><span class="spec-k">Applications</span><span class="spec-v">Furniture, shelving, doors</span></div>
+          </div>
+          <a href="#rfq" class="prod-cta">Request Specs &amp; Pricing →</a>
+        </div>
+      </div>
+      <div class="prod-card reveal d2">
+        <div class="prod-top">
+          <img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/Prep%20L%20%286%29-3008x2000-1920w.JPG" alt="MBS Barecore" loading="lazy"/>
+          <div class="prod-top-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">Barecore</div>
+          <div class="prod-desc">Unfinished core panels for customers applying their own face veneers or overlays. Consistent density, clean gluing surface, precision thickness.</div>
+          <div class="prod-specs">
+            <div class="spec-row"><span class="spec-k">Species</span><span class="spec-v">Albizia Falcata</span></div>
+            <div class="spec-row"><span class="spec-k">Thickness</span><span class="spec-v">9mm – 18mm</span></div>
+            <div class="spec-row"><span class="spec-k">Standard Size</span><span class="spec-v">1220 × 2440mm</span></div>
+            <div class="spec-row"><span class="spec-k">Moisture Content</span><span class="spec-v">8% – 12%</span></div>
+            <div class="spec-row"><span class="spec-k">Best For</span><span class="spec-v">Re-facing, custom overlays</span></div>
+          </div>
+          <a href="#rfq" class="prod-cta">Request Specs &amp; Pricing →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="cert" id="cert">
+  <div class="container">
+    <div class="cert-inner">
+      <div class="reveal">
+        <div class="tag">Certifications &amp; Quality</div>
+        <h2 class="h-display">Two World-Class Standards</h2>
+        <p class="cert-desc">MBS holds both CARB Phase II and JAS certifications — giving our customers direct access to the USA, Japan, and any market that demands the highest emission and quality standards.</p>
+        <div class="cert-cards">
+          <div class="cert-item">
+            <div class="cert-icon" style="background:white; padding:4px;">
+              <img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/air-resources-board-240x240-240x240-181w.jpg" alt="CARB" style="width:36px;height:36px;object-fit:contain;border-radius:4px;"/>
+            </div>
+            <div>
+              <h4>CARB Phase II — California Air Resources Board</h4>
+              <p>Certified 2009. One of the strictest global standards for formaldehyde emissions. Required for selling composite wood products in California and regulated US markets. Cert No. TPC6/CARB-ATCM/M019-HWPW014.</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon gold">🌸</div>
+            <div>
+              <h4>JAS — Japan Agricultural Standards</h4>
+              <p>Certified to Japanese Agricultural Standards — a prerequisite for entering Japan's premium timber market. Assures Japanese buyers of dimensional accuracy, bond strength, and formaldehyde compliance.</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon" style="background:white; padding:4px;">
+              <img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/V%20Legal%20Web-213x147-134w.jpg" alt="V-Legal" style="width:36px;height:36px;object-fit:contain;border-radius:4px;"/>
+            </div>
+            <div>
+              <h4>V-Legal — Indonesian Timber Legality Assurance</h4>
+              <p>SVLK (Sistem Verifikasi Legalitas Kayu) verified. Confirms our timber comes from legal, sustainably managed sources — required for exporting to many key markets.</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon" style="background:var(--warm-bg); font-size:18px;">✅</div>
+            <div>
+              <h4>Export-Grade Multi-Stage QC</h4>
+              <p>Every shipment passes thickness tolerance, moisture content (8–12%), glue bond strength, and visual grading checks. Full documentation provided for customs and inspection.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cert-visual reveal d1">
+        <div class="cert-vis-title">Export Performance</div>
+        <div class="cert-nums">
+          <div class="cert-num"><div class="cert-num-val">2</div><div class="cert-num-lbl">International<br/>Certifications</div></div>
+          <div class="cert-num"><div class="cert-num-val">5</div><div class="cert-num-lbl">Continents<br/>Served</div></div>
+          <div class="cert-num"><div class="cert-num-val">17+</div><div class="cert-num-lbl">Years<br/>Exporting</div></div>
+        </div>
+        <div class="cert-div"></div>
+        <div class="cert-markets">
+          <div class="cert-market"><div class="cert-mname"><span>🌏</span> Asia</div><div class="cert-bar"><div class="cert-fill" style="width:85%"></div></div><div class="cert-pct">Primary</div></div>
+          <div class="cert-market"><div class="cert-mname"><span>🇯🇵</span> Japan</div><div class="cert-bar"><div class="cert-fill" style="width:72%"></div></div><div class="cert-pct">JAS cert</div></div>
+          <div class="cert-market"><div class="cert-mname"><span>🇺🇸</span> USA</div><div class="cert-bar"><div class="cert-fill" style="width:60%"></div></div><div class="cert-pct">CARB II</div></div>
+          <div class="cert-market"><div class="cert-mname"><span>🌍</span> Europe</div><div class="cert-bar"><div class="cert-fill" style="width:50%"></div></div><div class="cert-pct">Active</div></div>
+          <div class="cert-market"><div class="cert-mname"><span>🌎</span> Americas</div><div class="cert-bar"><div class="cert-fill" style="width:40%"></div></div><div class="cert-pct">Active</div></div>
+          <div class="cert-market"><div class="cert-mname"><span>🌍</span> Africa</div><div class="cert-bar"><div class="cert-fill" style="width:28%"></div></div><div class="cert-pct">Growing</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GROUP TIMELINE -->
+<section class="timeline" id="history">
+  <div class="container">
+    <div class="timeline-header reveal">
+      <div class="tag">Our History</div>
+      <h2 class="h-display">The Mustikatama Group Story</h2>
+      <p>MBS is part of a diversified industrial group with roots going back to 1987. A long track record of building and scaling manufacturing businesses in East Java, Indonesia.</p>
+    </div>
+    <div class="timeline-track">
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <div class="tl-year">1987</div>
+          <div class="tl-title">Mustikatama Group Founded</div>
+          <div class="tl-desc">Group origins in East Java with salt iodization (CV. Mekarsari Jaya) and rice milling (CV. Sumbersari Jaya) operations.</div>
+        </div>
+        <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+        <div class="tl-content" style="visibility:hidden"></div>
+      </div>
+      <div class="tl-item reveal d1">
+        <div class="tl-content" style="visibility:hidden"></div>
+        <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+        <div class="tl-content">
+          <div class="tl-year">1993</div>
+          <div class="tl-title">PT Mustika Bahana Jaya (MBJ)</div>
+          <div class="tl-desc">Timber operations begin. MBJ established, specializing in rubberwood and Merkusii pine processing.</div>
+        </div>
+      </div>
+      <div class="tl-item reveal d2">
+        <div class="tl-content">
+          <div class="tl-year">1998</div>
+          <div class="tl-title">Expansion to North Sumatra</div>
+          <div class="tl-desc">PT Sumber Karindo Sakti (SKS) established in Medan — taking Finger Joint Laminated Board production nationwide.</div>
+        </div>
+        <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+        <div class="tl-content" style="visibility:hidden"></div>
+      </div>
+      <div class="tl-item reveal d1">
+        <div class="tl-content" style="visibility:hidden"></div>
+        <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+        <div class="tl-content">
+          <div class="tl-year cert">2004</div>
+          <div class="tl-title">MBJ Achieves JAS Certification</div>
+          <div class="tl-desc">Group earns its first Japan Agricultural Standards certification, opening Japan's premium timber market.</div>
+          <div class="tl-badge cert">🌸 JAS Certified</div>
+        </div>
+      </div>
+      <div class="tl-item reveal d2">
+        <div class="tl-content">
+          <div class="tl-year mbs">2006</div>
+          <div class="tl-title">PT Mustika Buana Sejahtera Founded</div>
+          <div class="tl-desc">MBS established — the Group's dedicated Albizia Falcata (Sengon) plywood and blockboard manufacturer. Powered by Group expertise and new talent.</div>
+          <div class="tl-badge mbs">🏭 MBS Established</div>
+        </div>
+        <div class="tl-dot-wrap"><div class="tl-dot mbs"></div></div>
+        <div class="tl-content" style="visibility:hidden"></div>
+      </div>
+      <div class="tl-item reveal d1">
+        <div class="tl-content" style="visibility:hidden"></div>
+        <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+        <div class="tl-content">
+          <div class="tl-year cert">2009</div>
+          <div class="tl-title">MBS Achieves CARB Phase II</div>
+          <div class="tl-desc">MBS earns California Air Resources Board certification — unlocking the US market and solidifying MBS as a world-class supplier. Cert No. TPC6/CARB-ATCM/M019-HWPW014.</div>
+          <div class="tl-badge cert">🏆 CARB Phase II</div>
+        </div>
+      </div>
+      <div class="tl-item reveal d2">
+        <div class="tl-content">
+          <div class="tl-year">Today</div>
+          <div class="tl-title">700+ Workers, 5 Continents</div>
+          <div class="tl-desc">MBS continues to grow — exporting to buyers across Europe, Asia, the Americas, Africa, and Oceania with a workforce of 700+ and two international certifications.</div>
+        </div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--gold)"></div></div>
+        <div class="tl-content" style="visibility:hidden"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-header reveal">
+      <div class="tag">Our Process</div>
+      <h2 class="h-display">From Plantation to Your Warehouse</h2>
+      <p>Every panel you receive meets the same standard as the last. Our process is built for consistency at scale.</p>
+    </div>
+    <div class="process-steps reveal">
+      <div class="proc-step">
+        <div class="proc-photo"><img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/Logyard%20%286%29_7BHvCBWZR2QJfK7cpPSR-3008x2000-1152w.JPG" alt="Plantation Sourcing" loading="lazy"/></div>
+        <div class="proc-content">
+          <div class="proc-num">Step 01</div>
+          <h3>Plantation Sourcing</h3>
+          <p>Albizia Falcata logs arrive from certified plantation forests — fast-growing, renewable, and fully traceable.</p>
+          <div class="proc-detail">→ Traceable plantation origin</div>
+        </div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-photo"><img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/CR%20%283%29-2832x2128-1920w.JPG" alt="Processing" loading="lazy"/></div>
+        <div class="proc-content">
+          <div class="proc-num">Step 02</div>
+          <h3>Processing &amp; Drying</h3>
+          <p>Logs are peeled or sliced to specification, then kiln-dried to 8–12% moisture content by our Japan-trained team.</p>
+          <div class="proc-detail">→ 8–12% MC target</div>
+        </div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-photo"><img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/QC%20%2812%29-800x623-1920w.JPG" alt="Quality Control" loading="lazy"/></div>
+        <div class="proc-content">
+          <div class="proc-num">Step 03</div>
+          <h3>Multi-Stage QC</h3>
+          <p>Thickness, glue bond strength, formaldehyde levels, and visual grading — checked at every production stage. CARB II and JAS compliant.</p>
+          <div class="proc-detail">→ Dual-certified compliance</div>
+        </div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-photo"><img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/CR%20%286%29_bPpa3SbNTpyc1lqGqlpZ-3008x2000-1152w.JPG" alt="Export" loading="lazy"/></div>
+        <div class="proc-content">
+          <div class="proc-num">Step 04</div>
+          <h3>Export-Ready Packing</h3>
+          <p>Export-standard packing with full documentation — phytosanitary certificate, B/L, packing list, and cert copies ready for your customs.</p>
+          <div class="proc-detail">→ Ships to 5 continents</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAIRMAN'S MESSAGE -->
+<section class="chairman">
+  <div class="chairman-bg"></div>
+  <div class="container">
+    <div class="chairman-inner">
+      <div class="chairman-card reveal">
+        <div class="quote-mark">"</div>
+        <blockquote>
+          Whether you are a manufacturer, wholesaler, large retail store, or construction contractor — check our products and see the benefits of ordering custom-made wood products from our factory. We have met the international standards of Japan Agricultural Standards (JAS) and California Air Resources Board (CARB) as evidence of our serious attention to your needs.
+        </blockquote>
+        <div class="chairman-sig">
+          <div class="chairman-avatar">👨‍💼</div>
+          <div>
+            <div class="chairman-name">H. Abdullah Iskandar</div>
+            <div class="chairman-title">Chairman, PT Mustika Buana Sejahtera</div>
+          </div>
+        </div>
+      </div>
+      <div class="chairman-right reveal d1">
+        <div class="tag">Vision &amp; Culture</div>
+        <h2 class="h-display">Become a Leading Company in Quality</h2>
+        <p>Our mission: employ dependable human resources, stay foremost in technology, and operate the best management system. These aren't just words — they're our 7 working culture habits.</p>
+        <div class="culture-items">
+          <div class="culture-item" data-n="1">Carrying out tasks effectively and efficiently</div>
+          <div class="culture-item" data-n="2">Enhancing cooperation across all teams</div>
+          <div class="culture-item" data-n="3">Always obedient to working rules</div>
+          <div class="culture-item" data-n="4">Being responsible for every output</div>
+          <div class="culture-item" data-n="5">Taking initiative and being creative</div>
+          <div class="culture-item" data-n="6">Care for the company and its resources</div>
+          <div class="culture-item" data-n="7">Focusing every task toward customer satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PEOPLE & CSR -->
+<section class="csr" id="csr">
+  <div class="container">
+    <div class="csr-inner">
+      <div class="reveal">
+        <div class="tag">People &amp; CSR</div>
+        <h2 class="h-display">Our People<br/>Are Our Future</h2>
+        <p class="csr-desc">MBS invests deeply in its workforce and the surrounding community. A stable team means a reliable supply chain for you.</p>
+        <div class="csr-cards">
+          <div class="csr-card">
+            <div class="csr-icon">🎓</div>
+            <h4>Japan OJT Training</h4>
+            <p>Key personnel trained on-the-job in Japanese wood manufacturing facilities, bringing world-class standards to East Java.</p>
+          </div>
+          <div class="csr-card">
+            <div class="csr-icon">📚</div>
+            <h4>Student Scholarships</h4>
+            <p>Financial assistance to eligible elementary, secondary, and high school students in the surrounding community — and to children of our workers.</p>
+          </div>
+          <div class="csr-card">
+            <div class="csr-icon">⚖️</div>
+            <h4>Labour Law Compliance</h4>
+            <p>Full compliance with Indonesian Labour Laws and Regulations. Fair wages, safe working conditions, and respect for worker rights.</p>
+          </div>
+          <div class="csr-card">
+            <div class="csr-icon">🤝</div>
+            <h4>Community Programs</h4>
+            <p>Regular company events for employees and their families — Independence Day, Ramadan/Idul Fitri gatherings, and community bonding programs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="csr-visual reveal d1">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:24px; border-radius:12px; overflow:hidden;">
+          <img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/CR%20%288%29-1600x1200-1920w.jpg" alt="MBS Facility" style="width:100%;height:120px;object-fit:cover;" loading="lazy"/>
+          <img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/QC%20%285%29-800x620-1920w.JPG" alt="MBS Quality Control" style="width:100%;height:120px;object-fit:cover;" loading="lazy"/>
+          <img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/Sengon%20l%20%286%29-1717x2000-1920w.JPG" alt="Sengon Logs" style="width:100%;height:120px;object-fit:cover;" loading="lazy"/>
+          <img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/CR%20%287%29-3008x2000-1920w.JPG" alt="MBS Production" style="width:100%;height:120px;object-fit:cover;" loading="lazy"/>
+        </div>
+        <div class="csr-vis-title">Mustikatama Group Structure</div>
+        <div class="csr-group">
+          <div class="csr-group-item">
+            <div class="csr-group-dot"></div>
+            <div class="csr-group-text">
+              <strong>PT Mustika Buana Sejahtera (MBS)</strong>
+              <span>Est. 2006 — Albizia Falcata plywood, blockboard &amp; barecore. CARB II &amp; JAS certified.</span>
+            </div>
+          </div>
+          <div class="csr-group-item">
+            <div class="csr-group-dot" style="background:var(--gold)"></div>
+            <div class="csr-group-text">
+              <strong>PT Mustika Bahana Jaya (MBJ)</strong>
+              <span>Est. 1993 — Rubberwood &amp; Merkusii pine, Finger Joint Laminated Board. JAS certified.</span>
+            </div>
+          </div>
+          <div class="csr-group-item">
+            <div class="csr-group-dot" style="background:var(--coral)"></div>
+            <div class="csr-group-text">
+              <strong>PT Karya Setya Mustikatama (KSMT)</strong>
+              <span>Est. 1988 — Grain milling, rice processing, and onion processing operations.</span>
+            </div>
+          </div>
+        </div>
+        <div class="csr-sub-title">All Companies</div>
+        <div class="csr-group-companies">
+          <div class="csr-co"><div class="csr-co-name">📍 Headquarters</div><div class="csr-co-detail">Lumajang, East Java</div></div>
+          <div class="csr-co"><div class="csr-co-name">📞 Group Phone</div><div class="csr-co-detail">+62 334 887888</div></div>
+          <div class="csr-co"><div class="csr-co-name">📠 Group Fax</div><div class="csr-co-detail">+62 334 884473</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUSTAINABILITY -->
+<section class="sustain" id="sustain">
+  <div class="sustain-bg"></div>
+  <div class="container">
+    <div class="sustain-inner">
+      <div class="reveal">
+        <div class="tag sustain-tag">Sustainability</div>
+        <h2 class="h-display">Good Wood.<br/>Good Business.</h2>
+        <p class="sustain-desc">Using plantation-grown Sengon isn't just our environmental commitment — it's your supply chain advantage. Renewable, fast-growing, and always available.</p>
+        <div class="sustain-points">
+          <div class="sustain-pt"><div class="sustain-pt-dot">✓</div><p><strong>No deforestation</strong> — 100% from certified plantation forests, never natural or protected areas</p></div>
+          <div class="sustain-pt"><div class="sustain-pt-dot">✓</div><p><strong>5–7 year harvest cycle</strong> — Albizia Falcata regenerates fast, ensuring long-term supply security for your business</p></div>
+          <div class="sustain-pt"><div class="sustain-pt-dot">✓</div><p><strong>Low indoor emissions</strong> — CARB Phase II limits formaldehyde, protecting end users and meeting strict market regulations</p></div>
+          <div class="sustain-pt"><div class="sustain-pt-dot">✓</div><p><strong>Supports global warming prevention</strong> — fast-growing plantations actively absorb CO₂ and produce oxygen</p></div>
+          <div class="sustain-pt"><div class="sustain-pt-dot">✓</div><p><strong>700+ local jobs</strong> — stable community employment in Lumajang means a stable, loyal workforce for consistent output</p></div>
+        </div>
+      </div>
+      <div class="sustain-cards reveal d1">
+        <div class="sustain-card"><div class="sustain-card-ic">🌱</div><h4>Fast-Growing Wood</h4><p>Harvest-ready in 5–7 years. Reliable, renewable supply for your long-term sourcing contracts.</p></div>
+        <div class="sustain-card"><div class="sustain-card-ic">💨</div><h4>Low Emissions</h4><p>CARB Phase II &amp; JAS compliant. Meets California's and Japan's strictest formaldehyde standards.</p></div>
+        <div class="sustain-card"><div class="sustain-card-ic">🏡</div><h4>Community-Rooted</h4><p>700+ local workers plus CSR scholarships. Stable community = consistent production.</p></div>
+        <div class="sustain-card"><div class="sustain-card-ic">📋</div><h4>ESG Documentation</h4><p>Plantation origin documentation to support your sustainability reporting and green procurement policies.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RFQ -->
+<section class="rfq" id="rfq">
+  <div class="container">
+    <div class="rfq-inner">
+      <div class="reveal">
+        <div class="tag">Request a Quote</div>
+        <h2 class="h-display">Ready to Source?<br/>Let's Talk.</h2>
+        <p class="rfq-desc">Send us your requirements and our team will respond within 1 business day with pricing, lead times, and availability.</p>
+        <div class="rfq-why">
+          <div class="rfq-why-item">Typically responds within 24 business hours</div>
+          <div class="rfq-why-item">Custom dimensions, grades &amp; specs available</div>
+          <div class="rfq-why-item">Product samples available on request</div>
+          <div class="rfq-why-item">Full export documentation provided</div>
+          <div class="rfq-why-item">Flexible MOQ — trial orders welcome</div>
+          <div class="rfq-why-item">CARB II &amp; JAS certification docs included</div>
+        </div>
+        <div class="rfq-contacts">
+          <div class="rfq-contact-row"><div class="rfq-ic">📞</div><span><a href="tel:+6233488788">+62 334 887888</a></span></div>
+          <div class="rfq-contact-row"><div class="rfq-ic">📠</div><span>+62 334 884473</span></div>
+          <div class="rfq-contact-row"><div class="rfq-ic">✉️</div><span><a href="mailto:marketing@mustikatama.com">marketing@mustikatama.com</a></span></div>
+          <div class="rfq-contact-row"><div class="rfq-ic">📍</div><span>Jl. Raya Lumajang–Tempeh Km 7, Kab. Lumajang, East Java 67371</span></div>
+          <div class="rfq-contact-row"><div class="rfq-ic">🕐</div><span>Mon–Fri 7:00–16:30 • Sat 7:00–15:00</span></div>
+        </div>
+      </div>
+      <div class="rfq-form reveal d1">
+        <h3>Send an Inquiry</h3>
+        <form id="rfq-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact"/>
+          <input type="hidden" name="bot-field" style="display:none"/>
+          <div class="frow">
+            <div class="fg"><label>Full Name *</label><input type="text" name="name" placeholder="John Smith" required/></div>
+            <div class="fg"><label>Company *</label><input type="text" name="company" placeholder="Acme Furniture Co." required/></div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label>Email Address *</label><input type="email" name="email" placeholder="john@company.com" required/></div>
+            <div class="fg"><label>Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+1 234 567 890"/></div>
+          </div>
+          <div class="frow">
+            <div class="fg">
+              <label>Product of Interest *</label>
+              <select name="product" required>
+                <option value="">Select product...</option>
+                <option>Plywood</option>
+                <option>Blockboard</option>
+                <option>Barecore</option>
+                <option>Multiple products</option>
+              </select>
+            </div>
+            <div class="fg"><label>Destination Country</label><input type="text" name="destination" placeholder="e.g. United States"/></div>
+          </div>
+          <div class="fg"><label>Specifications &amp; Volume</label><textarea name="message" placeholder="Thickness (mm), size, grade, quantity (m³ or containers), target price, and any specific requirements..."></textarea></div>
+          <div id="form-success" style="display:none; background:rgba(104,204,209,.1); border:1px solid var(--teal); border-radius:10px; padding:14px; margin-bottom:16px; color:var(--teal-dark); font-weight:600; text-align:center;">
+            ✅ Message sent! We'll get back to you within 1 business day.
+          </div>
+          <button type="submit" class="rfq-submit">Send Inquiry <span class="rfq-arrow">→</span></button>
+          <p class="rfq-note">🔒 Your information is kept confidential. We respond within 1 business day.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <div class="footer-logo-mark">MBS</div>
+        <div class="footer-logo-name">PT Mustika Buana Sejahtera<span>Part of Mustikatama Group — Est. 1987</span></div>
+      </div>
+      <p>Export-grade plywood, blockboard &amp; barecore from sustainable Albizia Falcata. CARB II &amp; JAS certified. 700+ workers in Lumajang, East Java, Indonesia.</p>
+      <div class="footer-certs">
+        <span class="footer-cert-badge">🏆 CARB Phase II</span>
+        <span class="footer-cert-badge">🌸 JAS Certified</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Products</h5>
+      <ul>
+        <li><a href="#products">Plywood</a></li>
+        <li><a href="#products">Blockboard</a></li>
+        <li><a href="#products">Barecore</a></li>
+        <li><a href="#rfq">Request Catalog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#why">Why Choose MBS</a></li>
+        <li><a href="#cert">Certifications</a></li>
+        <li><a href="#history">Our History</a></li>
+        <li><a href="#csr">People &amp; CSR</a></li>
+        <li><a href="#sustain">Sustainability</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+6233488788">+62 334 887888</a></li>
+        <li><a href="tel:+6233488773">+62 334 884473 (Fax)</a></li>
+        <li><a href="mailto:marketing@mustikatama.com">marketing@mustikatama.com</a></li>
+        <li><a href="#">Lumajang, East Java 67371</a></li>
+        <li><a href="https://mbs.mustikatama.com" target="_blank">mbs.mustikatama.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 PT Mustika Buana Sejahtera. Part of the <a href="https://mustikatama.com">Mustikatama Group</a>.</p>
+    <p>🌿 Sustainable timber solutions since 2006</p>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+  // Hero reveals on load
+  document.querySelectorAll('.hero .reveal').forEach((el,i) => {
+    setTimeout(() => el.classList.add('in'), 120 + i * 90);
+  });
+
+  // Netlify form submission
+  const form = document.getElementById('rfq-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.rfq-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      try {
+        const data = new FormData(form);
+        const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
+        if (res.ok) {
+          form.reset();
+          document.getElementById('form-success').style.display = 'block';
+          btn.textContent = '✓ Sent!';
+        } else { throw new Error(); }
+      } catch {
+        btn.textContent = 'Send Inquiry →';
+        btn.disabled = false;
+        alert('Something went wrong. Please email us directly at marketing@mustikatama.com');
+      }
+    });
+  }
+</script>
+</body>
+</html>
