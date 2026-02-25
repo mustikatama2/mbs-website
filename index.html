@@ -929,9 +929,11 @@
       </div>
       <div class="rfq-form reveal d1">
         <h3>Send an Inquiry</h3>
-        <form id="rfq-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact"/>
-          <input type="hidden" name="bot-field" style="display:none"/>
+        <form id="rfq-form" action="https://formsubmit.co/marketing@mustikatama.com" method="POST">
+          <input type="hidden" name="_subject" value="New MBS Website Inquiry"/>
+          <input type="hidden" name="_captcha" value="false"/>
+          <input type="hidden" name="_template" value="table"/>
+          <input type="hidden" name="_next" value="https://mustikatama2.github.io/mbs-website/?sent=true"/>
           <div class="frow">
             <div class="fg"><label>Full Name *</label><input type="text" name="name" placeholder="John Smith" required/></div>
             <div class="fg"><label>Company *</label><input type="text" name="company" placeholder="Acme Furniture Co." required/></div>
@@ -1027,27 +1029,21 @@
     setTimeout(() => el.classList.add('in'), 120 + i * 90);
   });
 
-  // Netlify form submission
+  // Show success message if redirected back after form submit
+  if (window.location.search.includes('sent=true')) {
+    const success = document.getElementById('form-success');
+    if (success) {
+      success.style.display = 'block';
+      document.getElementById('rfq')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  // Loading state on submit
   const form = document.getElementById('rfq-form');
   if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+    form.addEventListener('submit', () => {
       const btn = form.querySelector('.rfq-submit');
-      btn.textContent = 'Sending…';
+      btn.innerHTML = 'Sending… <span>⏳</span>';
       btn.disabled = true;
-      try {
-        const data = new FormData(form);
-        const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
-        if (res.ok) {
-          form.reset();
-          document.getElementById('form-success').style.display = 'block';
-          btn.textContent = '✓ Sent!';
-        } else { throw new Error(); }
-      } catch {
-        btn.textContent = 'Send Inquiry →';
-        btn.disabled = false;
-        alert('Something went wrong. Please email us directly at marketing@mustikatama.com');
-      }
     });
   }
 </script>
