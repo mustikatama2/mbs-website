@@ -1,0 +1,7 @@
+{
+  "name": "mbs-website",
+  "public": true,
+  "github": {
+    "enabled": false
+  }
+}
