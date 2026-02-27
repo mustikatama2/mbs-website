@@ -144,24 +144,27 @@ a { text-decoration: none; color: inherit; }
 
 /* ─── VARIABLES ────────────────────────────────────────────────── */
 /*
-  Palette v2.3 — Sophisticated Warm Industrial
-  Accent:  Pantone 728 C  · #B5874E  warm cognac / bronzed oak
-  Light:   Pantone 9182 C · #F5F0EA  warm off-white
-  Dark:    Warm near-black · #1C1812
+  Palette v2.4 — Brand-Accurate
+  Extracted directly from Mustikatama Group logo:
+  Yellow:  #F0C200  — brand golden amber (used selectively: accents, highlights)
+  Green:   #1B6830  — brand forest green (used for CTAs, buttons, tags)
+  Balance: yellow highlights + green actions = professional, not "too bright"
 */
 :root {
-  --yellow:       #B5874E;   /* warm cognac — replaces bright yellow */
-  --yellow-hover: #9A6E39;   /* deeper cognac on hover */
-  --yellow-light: #F5F0EA;   /* warm off-white — replaces yellow tint */
-  --yellow-pale:  #EDE5D8;   /* pale sand — replaces bright yellow-pale */
-  --dark:         #1C1812;   /* warm near-black */
-  --dark2:        #2A2018;   /* secondary dark */
-  --text:         #2C2418;   /* warm dark brown */
-  --muted:        #6B5C4D;   /* warm mid-tone */
+  --yellow:       #F0C200;   /* brand golden amber — accent, highlights only */
+  --yellow-hover: #D4AB00;   /* slightly deeper on hover */
+  --yellow-light: #FFFDF0;   /* very pale yellow tint */
+  --yellow-pale:  #FDF5CC;   /* pale yellow for tags */
+  --green:        #1B6830;   /* brand forest green — primary CTA colour */
+  --green-hover:  #145224;   /* darker green on hover */
+  --dark:         #1A1C14;   /* warm near-black (slight green undertone) */
+  --dark2:        #242918;   /* secondary dark */
+  --text:         #242820;   /* near-black text */
+  --muted:        #5A6352;   /* warm muted green-grey */
   --white:        #ffffff;
-  --gray-light:   #F7F4EF;   /* warm light gray */
-  --gray-mid:     #EDE8E0;   /* warm mid gray */
-  --border:       #D8CFC4;   /* warm border */
+  --gray-light:   #F6F7F2;   /* very light warm grey */
+  --gray-mid:     #E8EAE0;   /* light warm grey */
+  --border:       #D4D8CA;   /* muted green-grey border */
   --nav-h:        72px;
 }
 
@@ -176,7 +179,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--yellow);
+  color: var(--green);
   margin-bottom: 14px;
 }
 .section-tag::before {
@@ -202,7 +205,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 }
 .btn-yellow {
   display: inline-block;
-  background: var(--yellow);
+  background: var(--green);
   color: var(--white);
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -210,11 +213,11 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 13px 28px;
-  border: 2px solid var(--yellow);
+  border: 2px solid var(--green);
   cursor: pointer;
   transition: background .2s, border-color .2s;
 }
-.btn-yellow:hover { background: var(--yellow-hover); border-color: var(--yellow-hover); }
+.btn-yellow:hover { background: var(--green-hover); border-color: var(--green-hover); }
 .btn-outline {
   display: inline-block;
   background: transparent;
@@ -293,7 +296,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   border-bottom: 2px solid transparent;
   transition: color .2s, border-color .2s;
 }
-.nav-links a:hover { color: var(--dark); border-bottom-color: var(--yellow); }
+.nav-links a:hover { color: var(--green); border-bottom-color: var(--yellow); }
 .nav-cta { margin-left: 16px; }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); transition: .3s; }
@@ -369,7 +372,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 
 /* ─── STATS STRIP ──────────────────────────────────────────────── */
 .stats-strip {
-  background: var(--dark);
+  background: var(--green);
   border-top: 3px solid var(--yellow);
   padding: 24px 0;
 }
@@ -428,7 +431,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   position: absolute;
   bottom: -16px;
   left: -16px;
-  background: var(--yellow);
+  background: var(--green);
   padding: 16px 20px;
   text-align: center;
 }
@@ -487,9 +490,9 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--yellow);
+  color: var(--green);
   background: transparent;
-  border: 1px solid var(--yellow);
+  border: 1px solid var(--green);
   display: inline-block;
   padding: 3px 8px;
   margin-bottom: 10px;
@@ -590,7 +593,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   border-top: 3px solid transparent;
   transition: border-color .2s;
 }
-.why-card:hover { border-top-color: var(--yellow); }
+.why-card:hover { border-top-color: var(--green); }
 .why-icon {
   font-size: 1.625rem;
   margin-bottom: 16px;
@@ -690,7 +693,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 .process-step p { font-size: 0.8125rem; color: var(--muted); line-height: 1.65; }
 
 /* ─── RFQ FORM ─────────────────────────────────────────────────── */
-.rfq { padding: 80px 0; background: var(--yellow-light); border-top: 4px solid var(--yellow); }
+.rfq { padding: 80px 0; background: var(--yellow-light); border-top: 4px solid var(--green); }
 .rfq-grid {
   display: grid;
   grid-template-columns: 5fr 7fr;
@@ -749,7 +752,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 }
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus { border-color: var(--yellow); }
+.form-group textarea:focus { border-color: var(--green); }
 .form-group textarea { resize: vertical; min-height: 96px; }
 .form-note {
   font-size: 11px;
@@ -760,19 +763,19 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 .btn-submit {
   width: 100%;
   padding: 14px;
-  background: var(--dark);
+  background: var(--green);
   color: var(--white);
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9375rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  border: 2px solid var(--dark);
+  border: 2px solid var(--green);
   cursor: pointer;
   transition: background .2s, border-color .2s;
   margin-top: 4px;
 }
-.btn-submit:hover { background: var(--yellow); border-color: var(--yellow); }
+.btn-submit:hover { background: var(--green-hover); border-color: var(--green-hover); }
 
 /* ─── FOOTER ───────────────────────────────────────────────────── */
 .footer { background: var(--dark); color: rgba(255,255,255,0.75); padding: 56px 0 0; }
@@ -884,7 +887,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   left: 0;
   right: 0;
   z-index: 998;
-  background: var(--dark);
+  background: var(--green);
   border-top: 2px solid var(--yellow);
   box-shadow: 0 -4px 16px rgba(0,0,0,0.25);
 }
