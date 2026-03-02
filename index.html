@@ -647,16 +647,19 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   padding: 24px 12px;
   text-align: center;
   border-right: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  transition: background .2s;
 }
+.market-item:hover { background: rgba(255,255,255,0.06); }
 .market-item:last-child { border-right: none; }
-.market-flag { font-size: 2rem; margin-bottom: 8px; }
+.market-flag { font-size: 2rem; margin-bottom: 8px; color: var(--yellow); }
 .market-name {
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--white);
   margin-bottom: 4px;
 }
-.market-detail { font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.5px; }
+.market-detail { font-size: 11px; color: rgba(255,255,255,0.75); letter-spacing: 0.5px; font-weight: 500; }
 
 /* ─── PROCESS ──────────────────────────────────────────────────── */
 .process { padding: 80px 0; background: var(--white); }
