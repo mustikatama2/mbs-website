@@ -6,16 +6,11 @@
     <lastmod>2026-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mbs.mustikatama.com/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://mbs.mustikatama.com/"/>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://mbs.mustikatama.com/"/>
+    <xhtml:link rel="alternate" hreflang="ja"      href="https://mbs.mustikatama.com/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mbs.mustikatama.com/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://mbs.mustikatama.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://mbs.mustikatama.com/"/>
-  </url>
-  <url>
-    <loc>https://mbs.mustikatama.com/thank-you.html</loc>
-    <lastmod>2026-03-02</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="ko"      href="https://mbs.mustikatama.com/"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://mbs.mustikatama.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mbs.mustikatama.com/"/>
   </url>
 </urlset>
