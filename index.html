@@ -476,6 +476,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 .product-card-img {
   aspect-ratio: 16/10;
   overflow: hidden;
+  position: relative;
 }
 .product-card-img img {
   width: 100%;
@@ -484,6 +485,18 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   transition: transform .35s;
 }
 .product-card:hover .product-card-img img { transform: scale(1.04); }
+/* ── Product image slider ── */
+.product-slider { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.slider-track { display: flex; height: 100%; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; }
+.slider-slide { min-width: 100%; height: 100%; flex-shrink: 0; }
+.slider-slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: none; }
+.slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,.45); border: none; color: #fff; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 3; font-size: 18px; line-height: 1; transition: background .2s; border-radius: 2px; }
+.slider-btn:hover { background: rgba(0,0,0,.72); }
+.slider-btn.prev { left: 8px; }
+.slider-btn.next { right: 8px; }
+.slider-dots { position: absolute; bottom: 9px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 3; }
+.slider-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.45); cursor: pointer; border: none; padding: 0; transition: background .2s, transform .2s; }
+.slider-dot.active { background: var(--yellow); transform: scale(1.2); }
 .product-card-body {
   padding: 24px 24px 28px;
   flex: 1;
@@ -1096,7 +1109,20 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
       <!-- Plywood -->
       <div class="product-card">
         <div class="product-card-img">
-          <img src="/assets/photos/factory/aerial-main-warehouse.jpg" alt="Plywood panels from PT MBS" loading="lazy">
+          <div class="product-slider" id="ply-slider" data-cur="0">
+            <div class="slider-track">
+              <div class="slider-slide"><img src="/assets/photos/factory/aerial-main-warehouse.jpg" alt="Plywood warehouse — MBS" loading="lazy"></div>
+              <div class="slider-slide"><img src="/assets/photos/products/ply-closeup.jpg" alt="Plywood closeup — cross-laminated veneer" loading="lazy"></div>
+              <div class="slider-slide"><img src="/assets/photos/products/Plywood product 2.jpg" alt="Plywood stack — MBS" loading="lazy"></div>
+            </div>
+            <button class="slider-btn prev" onclick="slideProduct('ply-slider',-1)" aria-label="Previous">‹</button>
+            <button class="slider-btn next" onclick="slideProduct('ply-slider',1)" aria-label="Next">›</button>
+            <div class="slider-dots">
+              <button class="slider-dot active" onclick="goSlide('ply-slider',0)"></button>
+              <button class="slider-dot" onclick="goSlide('ply-slider',1)"></button>
+              <button class="slider-dot" onclick="goSlide('ply-slider',2)"></button>
+            </div>
+          </div>
         </div>
         <div class="product-card-body">
           <span class="product-tag">High Strength</span>
@@ -1612,6 +1638,37 @@ document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click
 
 <script>
 function toggleFaq(el){const item=el.closest('.faq-item');const ans=item.querySelector('.faq-a');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.display='none'});if(!isOpen){item.classList.add('open');ans.style.display='block'}}
+
+/* ── Product image slider ── */
+function goSlide(id,idx){
+  const el=document.getElementById(id);
+  const slides=el.querySelectorAll('.slider-slide');
+  const dots=el.querySelectorAll('.slider-dot');
+  idx=(idx+slides.length)%slides.length;
+  el.dataset.cur=idx;
+  el.querySelector('.slider-track').style.transform='translateX(-'+idx*100+'%)';
+  dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+}
+function slideProduct(id,dir){
+  const el=document.getElementById(id);
+  goSlide(id,(parseInt(el.dataset.cur||0)+dir));
+}
+/* Auto-advance plywood slider every 4s */
+(function(){
+  const timers={};
+  function autoPlay(id){
+    if(timers[id])clearInterval(timers[id]);
+    timers[id]=setInterval(()=>slideProduct(id,1),4000);
+  }
+  document.addEventListener('DOMContentLoaded',()=>{
+    autoPlay('ply-slider');
+    const el=document.getElementById('ply-slider');
+    if(el){
+      el.addEventListener('mouseenter',()=>clearInterval(timers['ply-slider']));
+      el.addEventListener('mouseleave',()=>autoPlay('ply-slider'));
+    }
+  });
+})();
 </script>
 
 </body>
