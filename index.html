@@ -38,7 +38,7 @@
   "logo": "https://mbs-website-lac.vercel.app/assets/brand/logo.png",
   "description": "CARB Phase II and JAS-certified plywood and blockboard manufacturer in Lumajang, East Java, Indonesia. Exporting to Japan, USA, Europe, Africa and Oceania since 2006.",
   "foundingDate": "2006",
-  "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 700 },
+  "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 1500 },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Jl. Raya Lumajang–Tempeh Km 7",
@@ -461,7 +461,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 .section-header { margin-bottom: 48px; }
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2px;
   background: var(--border);
 }
@@ -588,14 +588,17 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 .why-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
+  gap: 0;
   margin-top: 48px;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
 }
 .why-card {
   background: var(--white);
   padding: 32px 28px;
   border-top: 3px solid transparent;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   transition: border-color .2s;
 }
 .why-card:hover { border-top-color: var(--green); }
@@ -922,8 +925,9 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   .about-grid,
   .cert-intro-grid,
   .rfq-grid { grid-template-columns: 1fr; gap: 40px; }
-  .products-grid,
+  .products-grid { grid-template-columns: 1fr 1fr; }
   .why-grid { grid-template-columns: 1fr 1fr; }
+  .why-card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 50%; }
   .cert-cards { grid-template-columns: 1fr; }
   .cert-card { border-right: none; border-bottom: 1px solid var(--border); }
   .cert-card:last-child { border-bottom: none; }
@@ -1041,7 +1045,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 <div class="stats-strip">
   <div class="container">
     <div class="stat-item">
-      <div class="stat-num">700+</div>
+      <div class="stat-num">1,500+</div>
       <div class="stat-label">Production Workers</div>
     </div>
     <div class="stat-item">
@@ -1073,7 +1077,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
         <div class="divider-yellow"></div>
         <p>PT Mustika Buana Sejahtera (MBS) is a specialist timber panel manufacturer based in Lumajang, East Java. We produce plywood and blockboard exclusively from plantation-grown Albizia Falcata (Sengon) — Indonesia's most renewable timber resource.</p>
         <p>Founded in 2006, we have earned certifications from the California Air Resources Board (CARB Phase II) and Japan Agricultural Standards (JAS) — two of the most demanding standards in global timber trade. Every panel leaving our factory meets the compliance requirements of your destination market.</p>
-        <p>With 700+ workers and a modern production facility, we are equipped to fulfil large-volume orders reliably and on schedule.</p>
+        <p>With 1,500+ workers and a modern production facility, we are equipped to fulfil large-volume orders reliably and on schedule.</p>
         <a href="#rfq" class="btn-yellow" style="margin-top:8px;">Discuss Your Requirements</a>
       </div>
       <div class="about-photo">
@@ -1283,9 +1287,9 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
       <div class="why-card">
         <div class="why-icon">⚡</div>
         <h3>High-Volume Production</h3>
-        <p>700+ dedicated production workers and a fully equipped East Java facility. Capable of handling large-volume, recurring orders with consistent quality and lead time.</p>
+        <p>1,500+ dedicated production workers and a fully equipped East Java facility. Capable of handling large-volume, recurring orders with consistent quality and lead time.</p>
         <div class="why-stat">
-          <span class="why-stat-num">700+</span>
+          <span class="why-stat-num">1,500+</span>
           <span class="why-stat-lbl">Skilled workers</span>
         </div>
       </div>
