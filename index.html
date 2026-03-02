@@ -235,28 +235,70 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 .btn-outline:hover { border-color: var(--white); color: var(--white); }
 .divider-yellow { width: 48px; height: 3px; background: var(--yellow); margin: 16px 0 24px; }
 
-/* ─── TOP BAR ──────────────────────────────────────────────────── */
+/* ─── TOP UTILITY BAR ──────────────────────────────────────────── */
 .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background: var(--dark);
-  color: rgba(255,255,255,0.75);
-  font-size: 12px;
-  padding: 6px 0;
+  height: 34px;
+  display: flex;
+  align-items: center;
 }
 .topbar .container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  width: 100%;
+}
+.topbar-left {
+  display: flex;
   align-items: center;
   gap: 16px;
-  flex-wrap: wrap;
+  font-size: 11px;
+  color: rgba(255,255,255,.45);
+  letter-spacing: .3px;
 }
-.topbar a { color: rgba(255,255,255,0.75); transition: color .2s; }
-.topbar a:hover { color: var(--yellow); }
-.topbar-left, .topbar-right { display: flex; gap: 20px; align-items: center; }
+.topbar-left a { color: rgba(255,255,255,.45); transition: color .2s; }
+.topbar-left a:hover { color: var(--yellow); }
+.topbar-sep { color: rgba(255,255,255,.2); }
+.topbar-langs {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.topbar-lang {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  color: rgba(255,255,255,.45);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color .2s;
+  border-right: 1px solid rgba(255,255,255,.1);
+}
+.topbar-lang:last-child { border-right: none; }
+.topbar-lang:hover { color: rgba(255,255,255,.85); }
+.topbar-lang.active { color: var(--yellow); }
+.topbar-lang .t-flag { font-size: .9rem; line-height: 1; }
+@media (max-width: 768px) {
+  .topbar-left { display: none; }
+  .topbar { justify-content: flex-end; }
+}
+@media (max-width: 480px) {
+  .topbar-lang .t-code { display: none; }
+  .topbar-lang { padding: 3px 6px; }
+}
 
 /* ─── NAVIGATION ───────────────────────────────────────────────── */
 .navbar {
   position: sticky;
-  top: 0;
+  top: 34px;
   z-index: 999;
   background: var(--white);
   border-bottom: 1px solid var(--border);
@@ -943,9 +985,6 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 /* ─── MOBILE ───────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .nav-links, .nav-cta { display: none; }
-  #langLabel { display: none; }
-  .lang-trigger { padding: 5px 8px; }
-  .lang-dropdown { right: 0; }
   .hamburger { display: flex; }
   .about-grid,
   .cert-intro-grid,
@@ -992,17 +1031,6 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 .faq-a ul{margin:8px 0 0 16px}
 .faq-a ul li{margin-bottom:5px}
 
-/* ── Language Selector ── */
-.lang-selector{position:relative;display:flex;align-items:center}
-.lang-trigger{display:flex;align-items:center;gap:5px;padding:5px 10px;border:1px solid var(--border);background:#fff;cursor:pointer;font-size:.8125rem;font-weight:600;color:var(--muted);transition:.2s;white-space:nowrap}
-.lang-trigger:hover{border-color:var(--green);color:var(--green)}
-.lang-trigger .globe{font-size:1rem}
-.lang-dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:#fff;border:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.1);min-width:160px;z-index:200}
-.lang-selector:hover .lang-dropdown,.lang-selector:focus-within .lang-dropdown{display:block}
-.lang-option{display:flex;align-items:center;gap:10px;padding:9px 14px;font-size:.8125rem;font-weight:600;color:var(--muted);cursor:pointer;transition:background .15s;border:none;background:none;width:100%;text-align:left}
-.lang-option:hover{background:var(--cream);color:var(--green)}
-.lang-option.active{color:var(--green);background:var(--cream)}
-.lang-option .lang-flag{font-size:1rem;width:22px;text-align:center}
 /* Suppress Google Translate banner */
 body{top:0!important}
 .goog-te-banner-frame.skiptranslate{display:none!important;height:0!important}
@@ -1012,16 +1040,20 @@ body{top:0!important}
 </head>
 <body>
 
-<!-- TOP BAR -->
+<!-- TOP UTILITY BAR -->
 <div class="topbar">
   <div class="container">
     <div class="topbar-left">
-      <span>📧 <a href="mailto:marketing@mustikatama.com">marketing@mustikatama.com</a></span>
-      <span>📞 <a href="tel:+623348878888">+62 334 887888</a></span>
+      <span>📞 <a href="tel:+62334887888">+62 334 887888</a></span>
+      <span class="topbar-sep">|</span>
+      <span>✉ <a href="mailto:marketing@mustikatama.com">marketing@mustikatama.com</a></span>
     </div>
-    <div class="topbar-right">
-      <span>Mon–Fri 07:00–16:00 &nbsp;·&nbsp; Sat 07:00–15:00</span>
-      <span>Lumajang, East Java, Indonesia</span>
+    <div class="topbar-langs" id="topbarLangs">
+      <button class="topbar-lang active" onclick="setLang('en','EN')" title="English"><span class="t-flag">🇬🇧</span><span class="t-code">EN</span></button>
+      <button class="topbar-lang" onclick="setLang('ja','日本語')" title="日本語"><span class="t-flag">🇯🇵</span><span class="t-code">JP</span></button>
+      <button class="topbar-lang" onclick="setLang('zh-CN','中文')" title="中文"><span class="t-flag">🇨🇳</span><span class="t-code">ZH</span></button>
+      <button class="topbar-lang" onclick="setLang('ko','한국어')" title="한국어"><span class="t-flag">🇰🇷</span><span class="t-code">KR</span></button>
+      <button class="topbar-lang" onclick="setLang('es','ES')" title="Español"><span class="t-flag">🇪🇸</span><span class="t-code">ES</span></button>
     </div>
   </div>
 </div>
@@ -1043,20 +1075,6 @@ body{top:0!important}
       <li><a href="#markets">Export Markets</a></li>
       <li><a href="#rfq">Contact</a></li>
     </ul>
-    <div class="lang-selector" id="langSelector">
-      <button class="lang-trigger" aria-label="Select language">
-        <span class="globe">🌐</span>
-        <span id="langLabel">EN</span>
-        <span style="font-size:.65rem;opacity:.6">▾</span>
-      </button>
-      <div class="lang-dropdown">
-        <button class="lang-option active" onclick="setLang('en','EN','🇬🇧')"><span class="lang-flag">🇬🇧</span> English</button>
-        <button class="lang-option" onclick="setLang('ja','日本語','🇯🇵')"><span class="lang-flag">🇯🇵</span> 日本語</button>
-        <button class="lang-option" onclick="setLang('zh-CN','中文','🇨🇳')"><span class="lang-flag">🇨🇳</span> 中文</button>
-        <button class="lang-option" onclick="setLang('ko','한국어','🇰🇷')"><span class="lang-flag">🇰🇷</span> 한국어</button>
-        <button class="lang-option" onclick="setLang('es','Español','🇪🇸')"><span class="lang-flag">🇪🇸</span> Español</button>
-      </div>
-    </div>
     <a href="#rfq" class="btn-yellow nav-cta">Request a Quote</a>
     <div class="hamburger" onclick="toggleMenu(this)">
       <span></span><span></span><span></span>
@@ -1659,19 +1677,16 @@ function googleTranslateElementInit(){
   },'google_translate_element');
   // Restore saved language on page load
   var saved=localStorage.getItem('mbs_lang');
-  if(saved&&saved!=='en') setTimeout(function(){setLang(saved,localStorage.getItem('mbs_lang_label')||saved,localStorage.getItem('mbs_lang_flag')||'🌐')},800);
+  if(saved&&saved!=='en') setTimeout(function(){setLang(saved,localStorage.getItem('mbs_lang_label')||saved)},800);
 }
-function setLang(code,label,flag){
-  // Update button label
-  document.getElementById('langLabel').textContent=label;
-  // Mark active option
-  document.querySelectorAll('.lang-option').forEach(function(el){
+function setLang(code,label){
+  // Mark active topbar button
+  document.querySelectorAll('.topbar-lang').forEach(function(el){
     el.classList.toggle('active',el.getAttribute('onclick').indexOf("'"+code+"'")>-1);
   });
   // Save preference
   localStorage.setItem('mbs_lang',code);
   localStorage.setItem('mbs_lang_label',label);
-  localStorage.setItem('mbs_lang_flag',flag);
   // Trigger Google Translate
   if(code==='en'){
     // Restore original
