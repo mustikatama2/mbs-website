@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PT Mustika Buana Sejahtera – Certified Plywood &amp; Blockboard Manufacturer, Indonesia</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231B6830'/><text x='16' y='22' font-family='serif' font-weight='900' font-size='11' fill='%23F0C200' text-anchor='middle'>MBS</text></svg>">
-<meta name="description" content="CARB Phase II and JAS-certified plywood, blockboard, and barecore manufacturer in East Java, Indonesia. Exporting to Japan, USA, Europe and beyond since 2006.">
-<meta name="keywords" content="plywood manufacturer Indonesia, blockboard supplier, CARB certified plywood, JAS plywood, Sengon plywood, Albizia Falcata plywood, barecore supplier, East Java timber, export plywood Indonesia, PT Mustika Buana Sejahtera">
+<meta name="description" content="CARB Phase II and JAS-certified plywood and blockboard manufacturer in East Java, Indonesia. Exporting to Japan, USA, Europe and beyond since 2006.">
+<meta name="keywords" content="plywood manufacturer Indonesia, blockboard supplier, CARB certified plywood, JAS plywood, Sengon plywood, Albizia Falcata plywood, East Java timber, export plywood Indonesia, PT Mustika Buana Sejahtera">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://mbs-website-lac.vercel.app/">
 
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mbs-website-lac.vercel.app/">
 <meta property="og:title" content="PT Mustika Buana Sejahtera – CARB & JAS Certified Plywood Manufacturer, Indonesia">
-<meta property="og:description" content="CARB Phase II and JAS-certified plywood, blockboard and barecore from East Java. Supplying manufacturers, wholesalers and importers on 5 continents since 2006.">
+<meta property="og:description" content="CARB Phase II and JAS-certified plywood and blockboard from East Java. Supplying manufacturers, wholesalers and importers on 5 continents since 2006.">
 <meta property="og:image" content="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/DSC_9277-3008x2000-1152w.JPG">
 <meta property="og:image:width" content="1152">
 <meta property="og:image:height" content="768">
@@ -24,7 +24,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PT Mustika Buana Sejahtera – Certified Plywood Manufacturer, Indonesia">
-<meta name="twitter:description" content="CARB Phase II & JAS-certified plywood, blockboard and barecore from East Java, Indonesia. Exporting to 5 continents since 2006.">
+<meta name="twitter:description" content="CARB Phase II & JAS-certified plywood and blockboard from East Java, Indonesia. Exporting to 5 continents since 2006.">
 <meta name="twitter:image" content="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/DSC_9277-3008x2000-1152w.JPG">
 
 <!-- Schema.org — Organization + ManufacturingBusiness -->
@@ -36,7 +36,7 @@
   "alternateName": "MBS",
   "url": "https://mbs-website-lac.vercel.app",
   "logo": "https://mbs-website-lac.vercel.app/assets/brand/logo.png",
-  "description": "CARB Phase II and JAS-certified plywood, blockboard and barecore manufacturer in Lumajang, East Java, Indonesia. Exporting to Japan, USA, Europe, Africa and Oceania since 2006.",
+  "description": "CARB Phase II and JAS-certified plywood and blockboard manufacturer in Lumajang, East Java, Indonesia. Exporting to Japan, USA, Europe, Africa and Oceania since 2006.",
   "foundingDate": "2006",
   "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 700 },
   "address": {
@@ -93,13 +93,7 @@
       },
       {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Product",
-          "name": "Barecore",
-          "description": "Unfinished core panels for custom veneer application. CARB Phase II certified. Thickness 9mm–18mm, size 1220×2440mm.",
-          "material": "Albizia Falcata"
-        }
-      }
+        "itemOffered":}
     ]
   },
   "areaServed": [
@@ -317,12 +311,22 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   background-image: url('https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/Logyard%20%282%29-3008x2000-1152w.JPG');
   background-size: cover;
   background-position: center 40%;
-  filter: brightness(0.42);
+  filter: brightness(0.55) saturate(1.1);
+}
+.hero-gradient-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(100deg,
+    rgba(15,18,10,0.90) 0%,
+    rgba(15,18,10,0.70) 42%,
+    rgba(15,18,10,0.15) 72%,
+    rgba(15,18,10,0.05) 100%
+  );
 }
 .hero-content {
   position: relative;
   z-index: 2;
   padding: 80px 0;
+  max-width: 580px;   /* text lives in left half only */
 }
 .hero-eyebrow {
   font-size: 11px;
@@ -340,7 +344,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
   color: var(--white);
-  max-width: 640px;
+  max-width: 520px;
   line-height: 1.2;
   margin-bottom: 20px;
 }
@@ -348,15 +352,15 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 .hero-desc {
   font-size: 1rem;
   color: rgba(255,255,255,0.8);
-  max-width: 520px;
+  max-width: 460px;
   margin-bottom: 36px;
   line-height: 1.7;
 }
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero-certs {
-  margin-top: 48px;
+  margin-top: 40px;
   display: flex;
-  gap: 20px;
+  gap: 8px;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -1013,6 +1017,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <div class="hero-gradient-overlay"></div>
   <div class="container hero-content">
     <div class="hero-eyebrow">Certified Timber Panel Manufacturer</div>
     <h1>Indonesia's Trusted Source for <em>Plywood &amp; Blockboard</em></h1>
@@ -1066,7 +1071,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
         <div class="section-tag">About MBS</div>
         <h2 class="section-title">East Java's Dedicated Plywood Manufacturer</h2>
         <div class="divider-yellow"></div>
-        <p>PT Mustika Buana Sejahtera (MBS) is a specialist timber panel manufacturer based in Lumajang, East Java. We produce plywood, blockboard and barecore exclusively from plantation-grown Albizia Falcata (Sengon) — Indonesia's most renewable timber resource.</p>
+        <p>PT Mustika Buana Sejahtera (MBS) is a specialist timber panel manufacturer based in Lumajang, East Java. We produce plywood and blockboard exclusively from plantation-grown Albizia Falcata (Sengon) — Indonesia's most renewable timber resource.</p>
         <p>Founded in 2006, we have earned certifications from the California Air Resources Board (CARB Phase II) and Japan Agricultural Standards (JAS) — two of the most demanding standards in global timber trade. Every panel leaving our factory meets the compliance requirements of your destination market.</p>
         <p>With 700+ workers and a modern production facility, we are equipped to fulfil large-volume orders reliably and on schedule.</p>
         <a href="#rfq" class="btn-yellow" style="margin-top:8px;">Discuss Your Requirements</a>
@@ -1087,7 +1092,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   <div class="container">
     <div class="section-header">
       <div class="section-tag">Our Products</div>
-      <h2 class="section-title">Plywood, Blockboard &amp; Barecore</h2>
+      <h2 class="section-title">Plywood &amp; Blockboard</h2>
       <div class="divider-yellow"></div>
       <p class="section-lead">All panels are manufactured from sustainable Albizia Falcata (Sengon) and produced to meet CARB Phase II and JAS specifications. Custom dimensions, grades and surface treatments available on request.</p>
     </div>
@@ -1153,37 +1158,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
         </div>
       </div>
 
-      <!-- Barecore -->
-      <div class="product-card">
-        <div class="product-card-img">
-          <img src="https://lirp.cdn-website.com/c754611f/dms3rep/multi/opt/Prep%20L%20%286%29-3008x2000-1920w.JPG" alt="Barecore panels from PT MBS" loading="lazy">
-        </div>
-        <div class="product-card-body">
-          <span class="product-tag">Export Grade</span>
-          <h3>Barecore</h3>
-          <p>Unfinished core panels for customers applying their own veneers or overlays. Consistent density, precision thickness tolerance and smooth surface for reliable adhesion.</p>
-          <div class="product-specs">
-            <div class="spec-item">
-              <div class="spec-label">Species</div>
-              <div class="spec-value">Albizia Falcata</div>
-            </div>
-            <div class="spec-item">
-              <div class="spec-label">Thickness</div>
-              <div class="spec-value">9mm – 18mm</div>
-            </div>
-            <div class="spec-item">
-              <div class="spec-label">Standard Size</div>
-              <div class="spec-value">1220 × 2440 mm</div>
-            </div>
-            <div class="spec-item">
-              <div class="spec-label">Certifications</div>
-              <div class="spec-value">CARB Phase II</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /products-grid -->
+</div><!-- /products-grid -->
     <p style="text-align:center;margin-top:20px;font-size:0.875rem;color:var(--muted);">
       Custom dimensions, species, grades and surface treatments available — <a href="#rfq" style="color:var(--dark);font-weight:600;text-decoration:underline;text-underline-offset:2px;">contact us with your specifications</a>.
     </p>
@@ -1201,23 +1176,20 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
     <div class="specs-tabs">
       <button class="spec-tab active" onclick="showSpec(event,'spec-ply')">Plywood</button>
       <button class="spec-tab" onclick="showSpec(event,'spec-bb')">Blockboard</button>
-      <button class="spec-tab" onclick="showSpec(event,'spec-bc')">Barecore</button>
     </div>
     <div id="spec-ply" class="spec-panel active">
       <table class="spec-table">
         <thead><tr><th>Thickness</th><th>Construction</th><th>Standard Size</th><th>Grade</th><th>Glue Bond</th></tr></thead>
         <tbody>
-          <tr><td>3 mm</td><td>3-ply</td><td>1220 × 2440 mm</td><td>BB/CC, CC/CC</td><td>MR / E1 / E0 (CARB P2)</td></tr>
-          <tr><td>4 mm</td><td>3-ply</td><td>1220 × 2440 mm</td><td>BB/BB, BB/CC</td><td>MR / E1 / E0 (CARB P2)</td></tr>
-          <tr><td>6 mm</td><td>3-ply</td><td>1220 × 2440 mm</td><td>BB/BB, BB/CC</td><td>MR / E1 / E0 (CARB P2)</td></tr>
-          <tr><td>9 mm</td><td>5-ply</td><td>1220 × 2440 mm</td><td>BB/BB, BB/CC</td><td>MR / E1 / E0 (CARB P2)</td></tr>
-          <tr><td>12 mm</td><td>5-ply</td><td>1220 × 2440 mm</td><td>BB/BB, BB/CC</td><td>MR / E1 / E0 (CARB P2)</td></tr>
-          <tr><td>15 mm</td><td>7-ply</td><td>1220 × 2440 mm</td><td>BB/BB, BB/CC</td><td>MR / E1 / E0 (CARB P2)</td></tr>
-          <tr><td>18 mm</td><td>7-ply</td><td>1220 × 2440 mm</td><td>BB/BB, BB/CC</td><td>MR / E1 / E0 (CARB P2)</td></tr>
-          <tr><td>25 mm</td><td>9-ply</td><td>1220 × 2440 mm</td><td>BB/CC, CC/CC</td><td>MR / E1</td></tr>
+          <tr><td>4 mm</td><td>3-ply</td><td>1220 × 2440 mm</td><td>BB/BB (JAS)</td><td>E0 (CARB P2)</td></tr>
+          <tr><td>6 mm</td><td>3-ply</td><td>1220 × 2440 mm</td><td>BB/BB (JAS)</td><td>E0 (CARB P2)</td></tr>
+          <tr><td>9 mm</td><td>5-ply</td><td>1220 × 2440 mm</td><td>BB/BB (JAS)</td><td>E0 (CARB P2)</td></tr>
+          <tr><td>12 mm</td><td>5-ply</td><td>1220 × 2440 mm</td><td>BB/BB (JAS)</td><td>E0 (CARB P2)</td></tr>
+          <tr><td>15 mm</td><td>7-ply</td><td>1220 × 2440 mm</td><td>BB/BB (JAS)</td><td>E0 (CARB P2)</td></tr>
+          <tr><td>18 mm</td><td>7-ply</td><td>1220 × 2440 mm</td><td>BB/BB (JAS)</td><td>E0 (CARB P2)</td></tr>
         </tbody>
       </table>
-      <p class="spec-note">Face/Back species: Albizia Falcata (Sengon). Core species: Albizia Falcata. Moisture content: 8–14%. Thickness tolerance: ±0.3 mm. Custom sizes and species on request.</p>
+      <p class="spec-note">Face/Back: Albizia Falcata (Sengon). Core: Albizia Falcata. Grade: BB/BB, JAS certified. Glue: E0 formaldehyde emission (CARB Phase II). Moisture content: 8–14%. Thickness tolerance: ±0.3 mm.</p>
     </div>
     <div id="spec-bb" class="spec-panel">
       <table class="spec-table">
@@ -1228,21 +1200,8 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
           <tr><td>30 mm</td><td>Sengon strip core</td><td>1220 × 2440 mm</td><td>Sengon veneer</td><td>MR / E1</td></tr>
         </tbody>
       </table>
-      <p class="spec-note">Core strips: Albizia Falcata (Sengon). Cross-banded. Moisture content: 8–14%. Suitable for furniture, cabinetry and door components. Custom sizes available.</p>
-    </div>
-    <div id="spec-bc" class="spec-panel">
-      <table class="spec-table">
-        <thead><tr><th>Thickness</th><th>Joint Type</th><th>Standard Size</th><th>Species</th><th>Glue Bond</th></tr></thead>
-        <tbody>
-          <tr><td>9 mm</td><td>Closed joint</td><td>1220 × 2440 mm</td><td>Albizia Falcata</td><td>E1 / E0 (CARB P2)</td></tr>
-          <tr><td>12 mm</td><td>Closed joint</td><td>1220 × 2440 mm</td><td>Albizia Falcata</td><td>E1 / E0 (CARB P2)</td></tr>
-          <tr><td>15 mm</td><td>Closed/Open joint</td><td>1220 × 2440 mm</td><td>Albizia Falcata</td><td>E1 / E0 (CARB P2)</td></tr>
-          <tr><td>18 mm</td><td>Closed/Open joint</td><td>1220 × 2440 mm</td><td>Albizia Falcata</td><td>E1</td></tr>
-        </tbody>
-      </table>
-      <p class="spec-note">Barecore is used as a substrate for lamination or veneer finishing. Moisture content: 8–14%. Both open and closed joint available depending on application.</p>
-    </div>
-  </div>
+      <p class="spec-note">Core strips: Albizia Falcata (Sengon). Cross-banded. Moisture content: 8–14%. Suitable for furniture, cabinetry and door components. </p>
+    </div></div>
 </section>
 
 <!-- CERTIFICATIONS -->
@@ -1340,15 +1299,6 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
           <span class="why-stat-lbl">Japan-trained QC</span>
         </div>
       </div>
-
-      <div class="why-card">
-        <div class="why-icon">📦</div>
-        <h3>Custom Specifications</h3>
-        <p>Non-standard dimensions, custom grades, surface treatments and packaging. We work with OEM manufacturers, importers and wholesalers who need tailored solutions.</p>
-        <div class="why-stat">
-          <span class="why-stat-num">Custom</span>
-          <span class="why-stat-lbl">Dimensions & grades</span>
-        </div>
       </div>
 
       <div class="why-card">
@@ -1386,7 +1336,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
       <div class="market-item">
         <div class="market-flag">🇪🇺</div>
         <div class="market-name">Europe</div>
-        <div class="market-detail">V-Legal / EUTR</div>
+        <div class="market-detail">V-Legal / SVLK</div>
       </div>
       <div class="market-item">
         <div class="market-flag">🇨🇳</div>
@@ -1471,15 +1421,11 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What is the minimum order quantity (MOQ)?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a">Our standard MOQ is <strong>1 × 20-foot container</strong> (approximately 15–20 CBM depending on product and thickness). For mixed-product orders across plywood, blockboard and barecore, contact us to discuss your requirements.</div>
+        <div class="faq-a">Our standard MOQ is <strong>1 × 40-foot High Cube container</strong> (approximately 60 CBM). For mixed-product orders across plywood and blockboard, contact us to discuss your requirements.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What are typical production lead times?</span><span class="faq-icon">+</span></div>
         <div class="faq-a">Standard lead time is <strong>4–6 weeks</strong> from order confirmation and deposit receipt. Lead times may vary based on product specification, volume and current production schedule. We will confirm exact lead time at the time of quotation.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Can you produce custom sizes or thicknesses?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a">Yes. We produce non-standard sizes and thicknesses to order with a minimum quantity. Common custom requests include 1525×3050mm sheets, non-standard thicknesses, and specific face/back veneer combinations. Contact us with your exact specification.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Which CARB certification do you hold?</span><span class="faq-icon">+</span></div>
@@ -1487,15 +1433,15 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Which port do you ship from?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a">We ship from <strong>Tanjung Perak Port, Surabaya</strong> (East Java), approximately 2.5 hours from our facility. We can arrange FOB Surabaya, C&amp;F or CIF terms depending on your preference. Your freight forwarder can also collect from our factory.</div>
+        <div class="faq-a">We ship from <strong>Tanjung Perak Port, Surabaya</strong> (East Java), approximately 2.5 hours from our facility. We can arrange FOB Surabaya, C&amp;F or CIF terms depending on your preference.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Can we request a sample before placing an order?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a">Yes, we can send sample panels (typically 300×300mm or 600×600mm cut pieces) via courier. Sample costs and shipping are at buyer's expense. Please include your specification — thickness, grade, glue type — when requesting samples.</div>
+        <div class="faq-a">Yes, we can send sample panels (typically 150×300mm cut pieces) via courier. Sample costs and shipping are at buyer's expense. Please include your specification — thickness, grade, glue type — when requesting samples.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What payment terms do you accept?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a">Standard terms are <strong>30% deposit</strong> on order confirmation, <strong>70% balance</strong> against Bill of Lading copy. We accept T/T (bank transfer). Letters of Credit (L/C) may be considered for established buyers.</div>
+        <div class="faq-a">Standard terms are <strong>30% deposit</strong> on order confirmation, <strong>70% balance</strong> before shipment. We accept T/T (bank transfer). Letters of Credit (L/C) may be considered for established buyers.</div>
       </div>
     </div>
   </div>
@@ -1588,9 +1534,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
               <option value="" disabled selected>Select product type</option>
               <option value="Plywood">Plywood</option>
               <option value="Blockboard">Blockboard</option>
-              <option value="Barecore">Barecore</option>
-              <option value="Multiple / Mixed">Multiple / Mixed</option>
-            </select>
+                                        </select>
           </div>
           <div class="form-row">
             <div class="form-group">
@@ -1621,7 +1565,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
       <div class="footer-brand">
         <div class="footer-logo-mbs">MBS</div>
         <div class="footer-logo-full">PT Mustika Buana Sejahtera</div>
-        <p>Certified plywood, blockboard and barecore manufacturer in Lumajang, East Java. Supplying importers, manufacturers and wholesalers on 5 continents since 2006.</p>
+        <p>Certified plywood and blockboard manufacturer in Lumajang, East Java. Supplying importers, manufacturers and wholesalers on 5 continents since 2006.</p>
         <div class="footer-certs">
           <span class="footer-cert-badge">CARB II</span>
           <span class="footer-cert-badge">JAS</span>
@@ -1633,8 +1577,7 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
         <ul>
           <li><a href="#products">Plywood</a></li>
           <li><a href="#products">Blockboard</a></li>
-          <li><a href="#products">Barecore</a></li>
-          <li><a href="#rfq">Custom Orders</a></li>
+                    <li><a href="#rfq">Custom Orders</a></li>
         </ul>
       </div>
       <div class="footer-col">
