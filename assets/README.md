@@ -1,28 +1,34 @@
 # MBS Website Assets
 
-Drop files here and push to GitHub. They become available at:
-`https://raw.githubusercontent.com/mustikatama2/mbs-website/main/assets/...`
+Drop files here before running deployment. File paths map directly to what the site expects.
 
-## Folder Structure
+## Structure
 
 ```
 assets/
 ├── photos/
-│   ├── factory/      ← Aerial, factory floor, logyard, machines, loading dock
-│   ├── products/     ← Plywood, blockboard, barecore — stacked, edge, surface shots
-│   ├── people/       ← Sales contact headshot, chairman, team photos
-│   ├── documents/    ← CARB cert, JAS cert, V-Legal cert (framed or scanned)
-│   └── context/      ← Products in use, furniture, construction, container loading
-├── brand/            ← Company logo (.svg, .png, .ai), brand guidelines, letterhead scan
-└── video/            ← Factory walkthrough, product demos (or just put YouTube link in notes.txt)
+│   ├── factory/          ← Factory floor, log yard, hot press, warehouse
+│   │   ├── logyard.jpg
+│   │   ├── production-floor.jpg
+│   │   ├── warehouse.jpg
+│   │   └── shipping.jpg
+│   ├── products/         ← Plywood stack, blockboard edge, panel close-up
+│   │   ├── plywood.jpg
+│   │   └── blockboard.jpg
+│   └── team/             ← Sales contact headshot
+│       └── sales-contact.jpg
+├── certs/                ← CARB cert scan, JAS cert scan, V-Legal
+│   ├── carb-cert.jpg
+│   ├── jas-cert.jpg
+│   └── vlegal-cert.jpg
+└── logo/                 ← Company logo (SVG preferred, PNG ok)
+    └── mbs-logo.svg
 ```
 
-## How to Upload (via GitHub website)
+## Photo Guidelines
+- **Minimum:** 1200px wide, JPG or WebP
+- **Aspect ratio:** 4:3 or 16:9 for cards; 3:2 for hero
+- **No watermarks, no dark exposures**
 
-1. Go to https://github.com/mustikatama2/mbs-website
-2. Navigate into the folder you want (e.g. `assets/photos/factory`)
-3. Click **Add file → Upload files**
-4. Drag and drop your photos
-5. Click **Commit changes**
-
-The agent (I_am) will pick them up automatically on the next update.
+## How to Use
+Once uploaded, ping the AI agent with the file paths and it will update the site to use real photos.
