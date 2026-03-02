@@ -262,38 +262,37 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
 .topbar-left a { color: rgba(255,255,255,.45); transition: color .2s; }
 .topbar-left a:hover { color: var(--yellow); }
 .topbar-sep { color: rgba(255,255,255,.2); }
-.topbar-langs {
-  display: flex;
-  align-items: center;
-  gap: 2px;
+/* Globe lang picker */
+.lang-picker { position: relative; display: flex; align-items: center; }
+.lang-globe {
+  display: flex; align-items: center; gap: 5px;
+  padding: 4px 10px; background: none; border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.6); font-size: 11px; font-weight: 600;
+  letter-spacing: .5px; cursor: pointer; transition: all .2s; white-space: nowrap;
+  border-radius: 2px;
 }
-.topbar-lang {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 3px 8px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .5px;
-  color: rgba(255,255,255,.45);
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: color .2s;
-  border-right: 1px solid rgba(255,255,255,.1);
+.lang-globe:hover, .lang-picker:hover .lang-globe { color: var(--yellow); border-color: rgba(240,194,0,.5); }
+.lang-globe .lg-icon { font-size: 1rem; }
+.lang-globe .lg-caret { font-size: .6rem; opacity: .6; transition: transform .2s; }
+.lang-picker:hover .lg-caret { transform: rotate(180deg); }
+.lang-menu {
+  display: none; position: absolute; top: calc(100% + 6px); right: 0;
+  background: #1e2118; border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 8px 24px rgba(0,0,0,.4); min-width: 148px; z-index: 500;
+  border-radius: 3px; overflow: hidden;
 }
-.topbar-lang:last-child { border-right: none; }
-.topbar-lang:hover { color: rgba(255,255,255,.85); }
-.topbar-lang.active { color: var(--yellow); }
-.topbar-lang .t-flag { font-size: .9rem; line-height: 1; }
-@media (max-width: 768px) {
-  .topbar-left { display: none; }
-  .topbar { justify-content: flex-end; }
+.lang-picker:hover .lang-menu { display: block; }
+.lang-item {
+  display: flex; align-items: center; gap: 9px; padding: 9px 14px;
+  font-size: 12px; font-weight: 600; color: rgba(255,255,255,.55);
+  background: none; border: none; width: 100%; text-align: left;
+  cursor: pointer; transition: background .15s, color .15s; white-space: nowrap;
 }
-@media (max-width: 480px) {
-  .topbar-lang .t-code { display: none; }
-  .topbar-lang { padding: 3px 6px; }
-}
+.lang-item:hover { background: rgba(255,255,255,.07); color: #fff; }
+.lang-item.active { color: var(--yellow); }
+.lang-item .li-flag { font-size: .95rem; width: 20px; }
+@media (max-width: 768px) { .topbar-left { display: none; } }
+@media (max-width: 480px) { .lang-globe .lg-label { display: none; } }
 
 /* ─── NAVIGATION ───────────────────────────────────────────────── */
 .navbar {
@@ -1048,12 +1047,19 @@ body{top:0!important}
       <span class="topbar-sep">|</span>
       <span>✉ <a href="mailto:marketing@mustikatama.com">marketing@mustikatama.com</a></span>
     </div>
-    <div class="topbar-langs" id="topbarLangs">
-      <button class="topbar-lang active" onclick="setLang('en','EN')" title="English"><span class="t-flag">🇬🇧</span><span class="t-code">EN</span></button>
-      <button class="topbar-lang" onclick="setLang('ja','日本語')" title="日本語"><span class="t-flag">🇯🇵</span><span class="t-code">JP</span></button>
-      <button class="topbar-lang" onclick="setLang('zh-CN','中文')" title="中文"><span class="t-flag">🇨🇳</span><span class="t-code">ZH</span></button>
-      <button class="topbar-lang" onclick="setLang('ko','한국어')" title="한국어"><span class="t-flag">🇰🇷</span><span class="t-code">KR</span></button>
-      <button class="topbar-lang" onclick="setLang('es','ES')" title="Español"><span class="t-flag">🇪🇸</span><span class="t-code">ES</span></button>
+    <div class="lang-picker" id="langPicker">
+      <button class="lang-globe" onclick="toggleLangMenu()" aria-label="Select language">
+        <span class="lg-icon">🌐</span>
+        <span class="lg-label" id="lgLabel">EN</span>
+        <span class="lg-caret">▾</span>
+      </button>
+      <div class="lang-menu" id="langMenu">
+        <button class="lang-item active" onclick="setLang('en','EN')"><span class="li-flag">🇬🇧</span> English</button>
+        <button class="lang-item" onclick="setLang('ja','日本語')"><span class="li-flag">🇯🇵</span> 日本語</button>
+        <button class="lang-item" onclick="setLang('zh-CN','中文')"><span class="li-flag">🇨🇳</span> 中文</button>
+        <button class="lang-item" onclick="setLang('ko','한국어')"><span class="li-flag">🇰🇷</span> 한국어</button>
+        <button class="lang-item" onclick="setLang('es','Español')"><span class="li-flag">🇪🇸</span> Español</button>
+      </div>
     </div>
   </div>
 </div>
@@ -1679,11 +1685,24 @@ function googleTranslateElementInit(){
   var saved=localStorage.getItem('mbs_lang');
   if(saved&&saved!=='en') setTimeout(function(){setLang(saved,localStorage.getItem('mbs_lang_label')||saved)},800);
 }
+function toggleLangMenu(){
+  var m=document.getElementById('langMenu');
+  m.style.display=m.style.display==='block'?'none':'block';
+}
+document.addEventListener('click',function(e){
+  var p=document.getElementById('langPicker');
+  if(p&&!p.contains(e.target)){document.getElementById('langMenu').style.display='';}
+});
 function setLang(code,label){
-  // Mark active topbar button
-  document.querySelectorAll('.topbar-lang').forEach(function(el){
+  // Update globe label
+  var lbl=document.getElementById('lgLabel');
+  if(lbl) lbl.textContent=label;
+  // Mark active item
+  document.querySelectorAll('.lang-item').forEach(function(el){
     el.classList.toggle('active',el.getAttribute('onclick').indexOf("'"+code+"'")>-1);
   });
+  // Close menu
+  document.getElementById('langMenu').style.display='';
   // Save preference
   localStorage.setItem('mbs_lang',code);
   localStorage.setItem('mbs_lang_label',label);
