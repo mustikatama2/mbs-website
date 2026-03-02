@@ -958,8 +958,11 @@ h1,h2,h3,h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
   .hero h1 { font-size: 1.75rem; }
   .products-grid,
   .why-grid,
-  .process-steps,
-  .markets-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .markets-grid { grid-template-columns: repeat(2, 1fr); }
+  .market-item { padding: 16px 8px; }
+  .market-item:nth-child(2n) { border-right: none; }
+  .market-flag { font-size: 1.625rem; }
   .stats-strip .container { flex-direction: column; }
   .stat-item + .stat-item { border-left: none; border-top: 1px solid rgba(0,0,0,0.12); padding-top: 12px; }
   .footer-grid { grid-template-columns: 1fr; }
